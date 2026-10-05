@@ -40,7 +40,7 @@ const projects = [
 
 export default function App() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#05080d] text-[#f4f2ed]">
+    <main className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[#f4f2ed]">
       <div aria-hidden="true" className="portfolio-bg" />
       <Header />
 
@@ -187,7 +187,7 @@ export default function App() {
 
 function Header() {
   return (
-    <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50 mix-blend-difference">
+    <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50">
       <div className="glass mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-5 py-4 sm:mx-10 sm:px-7 lg:mx-14 lg:px-8">
         <a href="#" className="text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
         <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
