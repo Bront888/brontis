@@ -198,7 +198,7 @@ function Header() {
           Available for work
         </a>
       </div>
-    </header>
+    </motion.header>
   );
 }
 
