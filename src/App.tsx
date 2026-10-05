@@ -153,7 +153,7 @@ export default function App() {
           </h2>
           <div className="shrink-0">
             <a
-              href="mailto:hello@brontis.dev"
+              href="mailto:chinedumjideofor@gmail.com"
               className="group flex h-28 w-28 items-center justify-center rounded-full bg-[#f4f2ed] text-center text-xs font-medium uppercase tracking-[0.12em] text-black transition-transform duration-500 hover:scale-110"
             >
               Get in
@@ -170,7 +170,7 @@ export default function App() {
         <div className="flex gap-5">
           <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" className="transition hover:text-white">GitHub</a>
           <a href="#" className="transition hover:text-white">LinkedIn</a>
-          <a href="mailto:hello@brontis.dev" className="transition hover:text-white">Email</a>
+          <a href="mailto:chinedumjideofor@gmail.com" className="transition hover:text-white">Email</a>
         </div>
       </footer>
     </main>
@@ -187,7 +187,7 @@ function Header() {
           <a href="#about" className="transition hover:text-white">About</a>
           <a href="#contact" className="transition hover:text-white">Contact</a>
         </nav>
-        <a href="mailto:hello@brontis.dev" className="text-[11px] uppercase tracking-[0.18em] transition hover:text-white">
+        <a href="mailto:chinedumjideofor@gmail.com" className="text-[11px] uppercase tracking-[0.18em] transition hover:text-white">
           Available for work
         </a>
       </div>
