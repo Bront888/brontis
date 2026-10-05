@@ -2,6 +2,24 @@
 @import "tailwindcss";
 
 :root {
+  --bg-void: #07090d;
+  --bg-surface: #0b0f16;
+  --bg-elevated: #101621;
+
+  --text-primary: #f7f9fc;
+  --text-secondary: #a9b2c1;
+  --text-muted: #697386;
+
+  --accent-primary: #0b63f6;
+  --accent-cyan: #22c7f2;
+  --accent-soft: rgba(34, 199, 242, 0.08);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --radius-card: 1.5rem;
+  --radius-pill: 999px;
+
   font-family: "Manrope", system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -9,14 +27,51 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg-void);
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  background: #07090d;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(34, 199, 242, 0.045), transparent 28rem),
+    var(--bg-void);
+  color: var(--text-primary);
+}
+
+body,
+button,
+a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
+  color: inherit;
   text-decoration: none;
+}
+
+::selection {
+  background: rgba(34, 199, 242, 0.9);
+  color: #06111a;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
