@@ -1,5 +1,6 @@
+import { useRef } from "react";
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const projects = [
   {
@@ -208,8 +209,13 @@ function Project({
   project: (typeof projects)[number];
   index: number;
 }) {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-3%", "3%"]);
+
   return (
     <motion.article
+      ref={ref}
       initial={{ opacity: 0, y: 45 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -220,7 +226,8 @@ function Project({
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="flex h-full w-full items-center justify-center"
+          style={{ y: imageY }}
+          className="flex h-[106%] w-full items-center justify-center"
         >
           {project.image ? (
             <img
