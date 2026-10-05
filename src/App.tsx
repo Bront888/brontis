@@ -1,199 +1,233 @@
-import { ArrowUpRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "motion/react";
 
 const projects = [
   {
-    number: "01",
+    index: "01",
     title: "OSBRONT",
-    type: "Health-tech platform",
+    category: "Health-tech / Product",
     description:
-      "A healthcare ecosystem focused on making authentic medicines and connected care more accessible across Africa.",
-    stack: "FastAPI · Flutter · PostgreSQL · Supabase",
-    accent: "from-blue-500/25 via-cyan-400/10 to-transparent",
+      "A healthcare platform built around one simple ambition: make trusted healthcare more reachable across Africa.",
+    detail: "FastAPI · Flutter · Supabase",
+    tone: "from-[#123c72] via-[#0b63f6] to-[#22c7f2]",
   },
   {
-    number: "02",
+    index: "02",
     title: "VERIDOUX",
-    type: "Digital & creative work",
+    category: "Digital / Creative",
     description:
-      "A visual and digital brand system built around clarity, premium presentation, and purposeful communication.",
-    stack: "Branding · UI · Creative Direction",
-    accent: "from-violet-500/20 via-fuchsia-400/10 to-transparent",
+      "A digital identity and creative system shaped around clarity, trust, and premium communication.",
+    detail: "Brand · Web · Visual direction",
+    tone: "from-[#28252a] via-[#4c4650] to-[#171519]",
   },
   {
-    number: "03",
-    title: "Developer Lab",
-    type: "Experiments & builds",
+    index: "03",
+    title: "BUILDING IN PUBLIC",
+    category: "Experiments / Learning",
     description:
-      "A growing collection of technical experiments across web, mobile, networking, automation, and developer tooling.",
-    stack: "React · TypeScript · Python · Flutter",
-    accent: "from-emerald-500/20 via-teal-400/10 to-transparent",
+      "A selection of technical experiments across software, mobile, networking, automation, and developer tooling.",
+    detail: "React · Python · Flutter · TypeScript",
+    tone: "from-[#16352d] via-[#245447] to-[#0b1714]",
   },
-];
-
-const skills = [
-  "React",
-  "TypeScript",
-  "Python",
-  "FastAPI",
-  "Flutter",
-  "SQL",
-  "Supabase",
-  "Git & GitHub",
-  "UI / UX",
-  "Product thinking",
 ];
 
 export default function App() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#07090d] text-white selection:bg-cyan-300 selection:text-slate-950">
-      <div className="pointer-events-none fixed inset-0 -z-0 bg-[radial-gradient(circle_at_75%_12%,rgba(34,211,238,0.09),transparent_24%),radial-gradient(circle_at_15%_35%,rgba(59,130,246,0.08),transparent_25%)]" />
+    <main className="min-h-screen overflow-x-hidden bg-[#0d0e0c] text-[#f4f2ed]">
+      <Header />
 
-      <nav className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-7 lg:px-8">
-        <a href="#" className="text-lg font-semibold tracking-[-0.04em]">
-          BRONTIS<span className="text-cyan-300">.</span>
-        </a>
-        <div className="hidden items-center gap-8 text-sm text-white/55 sm:flex">
-          <a className="transition hover:text-white" href="#work">Work</a>
-          <a className="transition hover:text-white" href="#about">About</a>
-          <a className="transition hover:text-white" href="#contact">Contact</a>
+      <section className="mx-auto flex min-h-[92vh] max-w-[1400px] flex-col justify-between px-6 pb-10 pt-8 sm:px-10 lg:px-14">
+        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-white/45">
+          <span>Software / Product / Design</span>
+          <span className="hidden sm:block">Lagos, Nigeria · 2026</span>
         </div>
-        <a
-          href="#contact"
-          className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium transition hover:border-white/20 hover:bg-white/10"
-        >
-          Let's talk
-        </a>
-      </nav>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pb-28 pt-20 lg:px-8 lg:pb-36 lg:pt-28">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 42 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-4xl"
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="pb-8 pt-28 sm:pt-36"
         >
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/5 px-3 py-1.5 text-xs text-cyan-200">
-            <Sparkles size={13} />
-            Software developer · Product builder
-          </div>
+          <p className="mb-7 max-w-xl text-sm leading-6 text-white/48">
+            I’m Brontis — a software developer and digital product builder
+            interested in turning ambitious ideas into things people can actually use.
+          </p>
 
-          <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.06em] sm:text-7xl lg:text-[88px]">
-            I build digital products that{" "}
-            <span className="bg-gradient-to-r from-white via-white to-cyan-300 bg-clip-text text-transparent">
-              solve real problems.
-            </span>
+          <h1 className="max-w-[1200px] text-[17vw] font-medium leading-[0.78] tracking-[-0.075em] sm:text-[13vw] lg:text-[11vw]">
+            I build
+            <br />
+            <span className="ml-[8vw] italic font-light text-white/72">things</span>
+            <br />
+            <span className="ml-[17vw]">that matter.</span>
           </h1>
-
-          <p className="mt-8 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">
-            I’m Brontis — a developer focused on turning ambitious ideas into
-            useful, reliable products across web, mobile, and backend systems.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
-            >
-              Explore my work
-              <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-            <a
-              href="mailto:hello@brontis.dev"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-medium text-white/75 transition hover:border-white/25 hover:text-white"
-            >
-              <Mail size={16} />
-              Get in touch
-            </a>
-          </div>
         </motion.div>
-      </section>
 
-      <section id="work" className="relative z-10 mx-auto max-w-6xl px-6 py-24 lg:px-8">
-        <SectionHeading eyebrow="Selected work" title="Things I've built." />
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <motion.article
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="group relative overflow-hidden rounded-3xl border border-white/8 bg-white/[0.025] p-7 transition hover:-translate-y-1 hover:border-white/15"
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br opacity-70 ${project.accent}`} />
-              <div className="relative">
-                <div className="flex items-center justify-between text-xs text-white/35">
-                  <span>{project.number}</span>
-                  <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </div>
-                <div className="mt-24">
-                  <p className="text-xs uppercase tracking-[0.18em] text-cyan-200/65">{project.type}</p>
-                  <h3 className="mt-2 text-3xl font-semibold tracking-[-0.04em]">{project.title}</h3>
-                  <p className="mt-4 min-h-24 text-sm leading-6 text-white/50">{project.description}</p>
-                  <p className="mt-6 border-t border-white/8 pt-5 text-xs text-white/35">{project.stack}</p>
-                </div>
-              </div>
-            </motion.article>
-          ))}
+        <div className="flex items-end justify-between">
+          <a href="#work" className="group flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/55">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 transition group-hover:bg-white group-hover:text-black">
+              <ArrowDown size={14} />
+            </span>
+            Scroll to explore
+          </a>
+          <span className="hidden text-right text-xs leading-5 text-white/35 sm:block">
+            Engineering · Product thinking
+            <br />
+            Visual communication
+          </span>
         </div>
       </section>
 
-      <section id="about" className="relative z-10 mx-auto grid max-w-6xl gap-14 px-6 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div>
-          <SectionHeading eyebrow="About" title="Curious by default. Serious about what I ship." />
-        </div>
-        <div className="space-y-6 text-base leading-8 text-white/55">
-          <p>
-            I enjoy working at the intersection of engineering, design, and product
-            thinking. I care about understanding the problem before choosing the technology.
-          </p>
-          <p>
-            My work spans APIs, databases, mobile interfaces, web applications,
-            deployment, and visual communication. The common thread is simple:
-            build something useful and make it feel intentional.
-          </p>
-          <div className="flex flex-wrap gap-2 pt-3">
-            {skills.map((skill) => (
-              <span key={skill} className="rounded-full border border-white/8 bg-white/[0.03] px-3 py-1.5 text-xs text-white/55">
-                {skill}
-              </span>
+      <section id="work" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
+        <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <p className="text-xs uppercase tracking-[0.2em] text-white/38">Selected work</p>
+            <h2 className="mt-5 max-w-sm text-5xl font-light leading-[0.92] tracking-[-0.055em] sm:text-6xl">
+              Built with
+              <br />
+              <em>intention.</em>
+            </h2>
+          </div>
+
+          <div className="space-y-28">
+            {projects.map((project, i) => (
+              <Project key={project.title} project={project} index={i} />
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="relative z-10 mx-auto max-w-6xl px-6 py-28 lg:px-8">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-8 text-center sm:p-14">
-          <p className="text-xs uppercase tracking-[0.2em] text-cyan-200/65">Have a project?</p>
-          <h2 className="mx-auto mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.05em] sm:text-6xl">
-            Let's build something worth putting online.
-          </h2>
-          <a
-            href="mailto:hello@brontis.dev"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
-          >
-            Start a conversation <ArrowUpRight size={16} />
-          </a>
+      <section id="about" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-44">
+        <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-white/38">About me</p>
+          </div>
+          <div>
+            <h2 className="max-w-5xl text-5xl font-light leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-[6.4rem]">
+              I like the space where{" "}
+              <em className="text-white/58">engineering</em>, design and ideas meet.
+            </h2>
+            <div className="mt-14 grid gap-10 border-t border-white/10 pt-8 sm:grid-cols-2">
+              <p className="text-sm leading-7 text-white/48">
+                I build across web, mobile and backend systems, but technology is
+                never the starting point. The problem is. I care about why something
+                should exist, who it serves, and how well it works.
+              </p>
+              <p className="text-sm leading-7 text-white/48">
+                My work is deliberately broad: software engineering, product
+                thinking, visual communication, and the curiosity to keep learning
+                whatever the next project requires.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <footer className="relative z-10 mx-auto flex max-w-6xl flex-col gap-5 border-t border-white/8 px-6 py-8 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between lg:px-8">
-        <span>© {new Date().getFullYear()} Brontis. Built with intent.</span>
-        <div className="flex items-center gap-4">
-          <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" aria-label="GitHub" className="transition hover:text-white"><Github size={16} /></a>
-          <a href="#" aria-label="LinkedIn" className="transition hover:text-white"><Linkedin size={16} /></a>
+      <section className="border-y border-white/8">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 sm:px-10 lg:px-14 lg:py-32">
+          <p className="text-xs uppercase tracking-[0.2em] text-white/38">Capabilities</p>
+          <div className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+            {["Product development", "Frontend engineering", "Backend systems", "Mobile applications", "UI / visual design", "Technical problem solving"].map((item, i) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.05 }}
+                className="border-t border-white/10 py-5 text-xl font-light tracking-[-0.02em] sm:text-2xl"
+              >
+                <span className="mr-4 text-xs text-white/25">0{i + 1}</span>
+                {item}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="mx-auto max-w-[1400px] px-6 py-32 sm:px-10 lg:px-14 lg:py-48">
+        <p className="text-xs uppercase tracking-[0.2em] text-white/38">Contact</p>
+        <div className="mt-10 flex flex-col justify-between gap-16 lg:flex-row lg:items-end">
+          <h2 className="max-w-5xl text-6xl font-light leading-[0.88] tracking-[-0.065em] sm:text-8xl lg:text-[9rem]">
+            Let’s make
+            <br />
+            something <em className="text-white/55">real.</em>
+          </h2>
+          <div className="shrink-0">
+            <a
+              href="mailto:hello@brontis.dev"
+              className="group flex h-28 w-28 items-center justify-center rounded-full bg-[#f4f2ed] text-center text-xs font-medium uppercase tracking-[0.12em] text-black transition-transform duration-500 hover:scale-110"
+            >
+              Get in
+              <br />
+              touch
+              <ArrowUpRight size={14} className="ml-1 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="mx-auto flex max-w-[1400px] flex-col gap-5 border-t border-white/8 px-6 py-8 text-[11px] uppercase tracking-[0.15em] text-white/35 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
+        <span>© {new Date().getFullYear()} Brontis</span>
+        <div className="flex gap-5">
+          <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" className="transition hover:text-white">GitHub</a>
+          <a href="#" className="transition hover:text-white">LinkedIn</a>
+          <a href="mailto:hello@brontis.dev" className="transition hover:text-white">Email</a>
         </div>
       </footer>
     </main>
   );
 }
 
-function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
+function Header() {
   return (
-    <div>
-      <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-200/60">{eyebrow}</p>
-      <h2 className="mt-3 max-w-xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">{title}</h2>
-    </div>
+    <header className="fixed left-0 right-0 top-0 z-50 mix-blend-difference">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-6 sm:px-10 lg:px-14">
+        <a href="#" className="text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
+        <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
+          <a href="#work" className="transition hover:text-white">Work</a>
+          <a href="#about" className="transition hover:text-white">About</a>
+          <a href="#contact" className="transition hover:text-white">Contact</a>
+        </nav>
+        <a href="mailto:hello@brontis.dev" className="text-[11px] uppercase tracking-[0.18em] transition hover:text-white">
+          Available for work
+        </a>
+      </div>
+    </header>
+  );
+}
+
+function Project({
+  project,
+  index,
+}: {
+  project: (typeof projects)[number];
+  index: number;
+}) {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 45 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+      className="group"
+    >
+      <div className={`relative aspect-[1.55/1] overflow-hidden rounded-[2rem] bg-gradient-to-br ${project.tone}`}>
+        <div className="absolute inset-0 opacity-40 mix-blend-screen" style={{
+          backgroundImage: "radial-gradient(circle at 70% 25%, rgba(255,255,255,.22), transparent 22%), linear-gradient(135deg, transparent 45%, rgba(0,0,0,.35))"
+        }} />
+        <div className="absolute inset-x-8 bottom-7 flex items-end justify-between text-white sm:inset-x-10 sm:bottom-10">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-white/60">{project.category}</p>
+            <h3 className="mt-2 text-4xl font-medium tracking-[-0.05em] sm:text-6xl">{project.title}</h3>
+          </div>
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 transition group-hover:bg-white group-hover:text-black">
+            <ArrowUpRight size={17} />
+          </span>
+        </div>
+      </div>
+      <div className="mt-6 grid gap-6 border-b border-white/10 pb-8 sm:grid-cols-[1fr_0.7fr]">
+        <p className="max-w-xl text-base leading-7 text-white/52">{project.description}</p>
+        <p className="text-xs uppercase tracking-[0.15em] text-white/32 sm:text-right">{project.detail}</p>
+      </div>
+    </motion.article>
   );
 }
