@@ -186,7 +186,7 @@ export default function App() {
 
 function Header() {
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 mix-blend-difference">
+    <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50 mix-blend-difference">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-6 sm:px-10 lg:px-14">
         <a href="#" className="text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
         <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
@@ -253,10 +253,10 @@ function Project({
           </span>
         </div>
       </div>
-      <div className="mt-6 grid gap-6 border-b border-white/10 pb-8 sm:grid-cols-[1fr_0.7fr]">
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.55, delay: 0.12 }} className="mt-6 grid gap-6 border-b border-white/10 pb-8 sm:grid-cols-[1fr_0.7fr]">
         <p className="max-w-xl text-base leading-7 text-white/52">{project.description}</p>
         <p className="text-xs uppercase tracking-[0.15em] text-white/32 sm:text-right">{project.detail}</p>
-      </div>
+      </motion.div>
     </motion.article>
   );
 }
