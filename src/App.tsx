@@ -9,7 +9,9 @@ const projects = [
     description:
       "A healthcare platform built around one simple ambition: make trusted healthcare more reachable across Africa.",
     detail: "FastAPI · Flutter · Supabase",
-    tone: "from-[#123c72] via-[#0b63f6] to-[#22c7f2]",
+    image: "/projects/osbront-logo.webp",
+    tone: "from-[#06132d] via-[#0b63f6] to-[#22c7f2]",
+    imageClass: "h-[76%] w-[76%] object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.4)]",
   },
   {
     index: "02",
@@ -18,7 +20,9 @@ const projects = [
     description:
       "A digital identity and creative system shaped around clarity, trust, and premium communication.",
     detail: "Brand · Web · Visual direction",
-    tone: "from-[#28252a] via-[#4c4650] to-[#171519]",
+    image: "/projects/veridoux-logo.webp",
+    tone: "from-[#07110d] via-[#17382d] to-[#0a0c0a]",
+    imageClass: "h-[70%] w-[70%] object-contain",
   },
   {
     index: "03",
@@ -27,7 +31,9 @@ const projects = [
     description:
       "A selection of technical experiments across software, mobile, networking, automation, and developer tooling.",
     detail: "React · Python · Flutter · TypeScript",
-    tone: "from-[#16352d] via-[#245447] to-[#0b1714]",
+    image: null,
+    tone: "from-[#171b19] via-[#2a332f] to-[#0d0f0e]",
+    imageClass: "",
   },
 ];
 
@@ -210,10 +216,26 @@ function Project({
       transition={{ duration: 0.8, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
       className="group"
     >
-      <div className={`relative aspect-[1.55/1] overflow-hidden rounded-[2rem] bg-gradient-to-br ${project.tone}`}>
-        <div className="absolute inset-0 opacity-40 mix-blend-screen" style={{
-          backgroundImage: "radial-gradient(circle at 70% 25%, rgba(255,255,255,.22), transparent 22%), linear-gradient(135deg, transparent 45%, rgba(0,0,0,.35))"
-        }} />
+      <div className={`relative flex aspect-[1.55/1] items-center justify-center overflow-hidden rounded-[2rem] bg-gradient-to-br ${project.tone}`}>
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="flex h-full w-full items-center justify-center"
+        >
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={`${project.title} logo`}
+              className={`transition-transform duration-700 ${project.imageClass}`}
+            />
+          ) : (
+            <div className="px-8 text-center">
+              <span className="text-[11px] uppercase tracking-[0.3em] text-white/35">03</span>
+              <p className="mt-5 text-5xl font-light tracking-[-0.05em] sm:text-7xl">BUILD / LEARN / SHIP</p>
+            </div>
+          )}
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/5" />
         <div className="absolute inset-x-8 bottom-7 flex items-end justify-between text-white sm:inset-x-10 sm:bottom-10">
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/60">{project.category}</p>
