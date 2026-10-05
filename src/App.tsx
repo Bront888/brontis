@@ -40,11 +40,12 @@ const projects = [
 
 export default function App() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#0d0e0c] text-[#f4f2ed]">
+    <main className="relative min-h-screen overflow-x-hidden bg-[#05080d] text-[#f4f2ed]">
+      <div aria-hidden="true" className="portfolio-bg" />
       <Header />
 
       <section className="mx-auto flex min-h-[92vh] max-w-[1400px] flex-col justify-between px-6 pb-10 pt-8 sm:px-10 lg:px-14">
-        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-white/45">
+        <div className="glass-soft flex items-center justify-between rounded-full px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-white/55">
           <span>Software / Product / Design</span>
           <span className="hidden sm:block">Lagos, Nigeria · 2026</span>
         </div>
@@ -95,7 +96,7 @@ export default function App() {
             </h2>
           </div>
 
-          <div className="space-y-28">
+          <div className="space-y-20">
             {projects.map((project, i) => (
               <Project key={project.title} project={project} index={i} />
             ))}
@@ -129,8 +130,8 @@ export default function App() {
         </div>
       </section>
 
-      <section className="border-y border-white/8">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 sm:px-10 lg:px-14 lg:py-32">
+      <section className="border-y border-white/10 bg-black/10 backdrop-blur-[2px]">
+        <div className="glass-soft mx-auto max-w-[1400px] rounded-[2rem] px-6 py-24 sm:px-10 lg:px-14 lg:py-32">
           <p className="text-xs uppercase tracking-[0.2em] text-white/38">Capabilities</p>
           <div className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
             {["Product development", "Frontend engineering", "Backend systems", "Mobile applications", "UI / visual design", "Technical problem solving"].map((item, i) => (
@@ -161,7 +162,7 @@ export default function App() {
           <div className="shrink-0">
             <a
               href="mailto:chinedumjideofor@gmail.com"
-              className="group flex h-28 w-28 items-center justify-center rounded-full bg-[#f4f2ed] text-center text-xs font-medium uppercase tracking-[0.12em] text-black transition-transform duration-500 hover:scale-110"
+              className="glass group flex h-28 w-28 items-center justify-center rounded-full bg-[#f4f2ed] text-center text-xs font-medium uppercase tracking-[0.12em] text-black transition-transform duration-500 hover:scale-110"
             >
               Get in
               <br />
@@ -187,7 +188,7 @@ export default function App() {
 function Header() {
   return (
     <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50 mix-blend-difference">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-6 sm:px-10 lg:px-14">
+      <div className="glass mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-5 py-4 sm:mx-10 sm:px-7 lg:mx-14 lg:px-8">
         <a href="#" className="text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
         <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
           <a href="#work" className="transition hover:text-white">Work</a>
@@ -222,7 +223,7 @@ function Project({
       transition={{ duration: 0.8, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
       className="group"
     >
-      <div className={`relative flex aspect-[1.55/1] items-center justify-center overflow-hidden rounded-[2rem] bg-gradient-to-br ${project.tone}`}>
+      <div className={`glass relative flex aspect-[1.55/1] items-center justify-center overflow-hidden rounded-[2rem] `}>
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -242,7 +243,7 @@ function Project({
             </div>
           )}
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/5" />
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent`} />
         <div className="absolute inset-x-8 bottom-7 flex items-end justify-between text-white sm:inset-x-10 sm:bottom-10">
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/60">{project.category}</p>
