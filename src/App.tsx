@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 
@@ -84,7 +84,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="work" className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
+      <section id="work" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-10">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Selected work</p>
@@ -103,7 +103,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="ventures" className="mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-28">
+      <section id="ventures" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-28">
         <div className="border-y border-white/10 py-8 sm:py-14">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -174,7 +174,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="osbront" className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
+      <section id="osbront" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
         <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
           <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
@@ -251,7 +251,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="veridoux" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
+      <section id="veridoux" className="scroll-mt-28 "mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
         <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
           <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
@@ -329,7 +329,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-44">
+      <section id="about" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-44">
         <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">About me</p>
@@ -464,7 +464,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" className="mx-auto max-w-[1400px] px-5 py-28 sm:px-10 sm:py-32 lg:px-14 lg:py-48">
+      <section id="contact" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-28 sm:px-10 sm:py-32 lg:px-14 lg:py-48">
         <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Contact</p>
@@ -534,7 +534,7 @@ function PortraitPresence() {
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <motion.div
         style={{ x, y, rotate, scale, opacity, filter: useTransform([saturate, hue], ([sat, hueValue]) => `saturate(${sat}) hue-rotate(${hueValue}deg)` as string) }}
-        className="absolute right-[-12vw] top-[8vh] w-[82vw] max-w-[1080px] sm:right-[-10vw] sm:w-[68vw] lg:right-[-8vw] lg:top-[5vh] lg:w-[54vw]"
+        className="absolute right-[-30vw] top-[11vh] w-[108vw] max-w-none sm:right-[-10vw] sm:top-[8vh] sm:w-[68vw] sm:max-w-[1080px] lg:right-[-8vw] lg:top-[5vh] lg:w-[54vw]"
       >
         <div className="portrait-haze absolute -inset-16 rounded-full" />
         <img
@@ -567,27 +567,61 @@ function PortraitPresence() {
 }
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-0 sm:pt-0">
-      <div className="glass mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-4 py-3 text-[#dbe8f5] sm:mx-10 sm:px-7 sm:py-4 lg:mx-14 lg:px-8">
-        <a href="#" aria-label="Back to top" className="shrink-0 text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
+      <div className="glass mx-auto max-w-[1400px] rounded-full text-[#dbe8f5] sm:mx-10 lg:mx-14">
+        <div className="flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4 lg:px-8">
+          <a href="#" aria-label="Back to top" onClick={() => setMenuOpen(false)} className="shrink-0 text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
 
-        <div className="hidden items-center gap-7 sm:flex">
-          <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">Software / Product / Design</span>
-          <span className="h-3 w-px bg-white/15" />
-          <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">Lagos, Nigeria · 2026</span>
+          <div className="hidden items-center gap-7 sm:flex">
+            <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">Software / Product / Design</span>
+            <span className="h-3 w-px bg-white/15" />
+            <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">Lagos, Nigeria · 2026</span>
+          </div>
+
+          <nav className="hidden items-center gap-7 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
+            <a href="#work" className="transition hover:text-white">Work</a>
+            <a href="#about" className="transition hover:text-white">About</a>
+            <a href="#contact" className="transition hover:text-white">Contact</a>
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <a href="mailto:chinedumjideofor@gmail.com" className="text-[10px] uppercase tracking-[0.16em] transition hover:text-white sm:text-[11px] sm:tracking-[0.18em]">
+              <span className="sm:hidden">Available</span>
+              <span className="hidden sm:inline">Available for work</span>
+            </a>
+            <button
+              type="button"
+              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((open) => !open)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/80 transition hover:border-white/30 hover:text-white sm:hidden"
+            >
+              {menuOpen ? "×" : "☰"}
+            </button>
+          </div>
         </div>
 
-        <nav className="hidden items-center gap-7 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
-          <a href="#work" className="transition hover:text-white">Work</a>
-          <a href="#about" className="transition hover:text-white">About</a>
-          <a href="#contact" className="transition hover:text-white">Contact</a>
-        </nav>
-
-        <a href="mailto:chinedumjideofor@gmail.com" className="text-[10px] uppercase tracking-[0.16em] transition hover:text-white sm:text-[11px] sm:tracking-[0.18em]">
-          <span className="sm:hidden">Available</span>
-          <span className="hidden sm:inline">Available for work</span>
-        </a>
+        <div className={`overflow-hidden px-4 transition-all duration-300 sm:hidden ${menuOpen ? "max-h-48 pb-4 opacity-100" : "max-h-0 pb-0 opacity-0"}`}>
+          <nav className="grid gap-1 border-t border-white/10 pt-3 text-[11px] uppercase tracking-[0.18em] text-white/70">
+            {[
+              ["Work", "#work"],
+              ["About", "#about"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-xl px-3 py-3 transition hover:bg-white/5 hover:text-white"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
       </div>
     </motion.header>
   );
