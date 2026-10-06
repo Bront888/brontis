@@ -261,14 +261,19 @@ export default function App() {
 
       <section id="about" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-44">
         <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
-          <div>
+          <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">About me</p>
+            <p className="mt-5 max-w-xs text-sm leading-6 text-[#c4d5e5]">
+              Software, product thinking, and visual communication — brought together around useful ideas.
+            </p>
           </div>
+
           <div>
             <h2 className="max-w-5xl text-5xl font-light leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-[6.4rem]">
               I like the space where{" "}
-              <em className="text-white/58">engineering</em>, design and ideas meet.
+              <em className="text-[#c4d5e5]">engineering</em>, design and ideas meet.
             </h2>
+
             <div className="mt-14 grid gap-10 border-t border-white/10 pt-8 sm:grid-cols-2">
               <p className="text-sm leading-7 text-[#c4d5e5]">
                 I build across web, mobile and backend systems, but technology is
@@ -276,10 +281,43 @@ export default function App() {
                 should exist, who it serves, and how well it works.
               </p>
               <p className="text-sm leading-7 text-[#c4d5e5]">
-                My work is deliberately broad: software engineering, product
-                thinking, visual communication, and the curiosity to keep learning
-                whatever the next project requires.
+                I enjoy moving between disciplines — writing software, shaping
+                interfaces, thinking through products, and refining the details
+                that make an experience feel intentional.
               </p>
+            </div>
+
+            <div className="mt-20">
+              <div className="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">How I work</p>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">01 — 03</span>
+              </div>
+
+              <div className="divide-y divide-white/10">
+                {[
+                  {
+                    number: "01",
+                    title: "Understand",
+                    text: "Start with the problem, the people it affects, and the outcome worth building toward.",
+                  },
+                  {
+                    number: "02",
+                    title: "Build",
+                    text: "Turn the idea into a working system with deliberate product decisions and solid technical foundations.",
+                  },
+                  {
+                    number: "03",
+                    title: "Refine",
+                    text: "Test, simplify, and improve until the result is useful, coherent, and ready for people to trust.",
+                  },
+                ].map((item) => (
+                  <div key={item.number} className="grid gap-4 py-7 sm:grid-cols-[80px_0.7fr_1.3fr] sm:items-start">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">{item.number}</span>
+                    <h3 className="text-2xl font-light tracking-[-0.03em] text-[#e7f1fa]">{item.title}</h3>
+                    <p className="max-w-xl text-sm leading-7 text-[#c4d5e5]">{item.text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
