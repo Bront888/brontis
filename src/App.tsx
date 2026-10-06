@@ -43,7 +43,8 @@ export default function App() {
     <main className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[#e7f1fa]">
       <div aria-hidden="true" className="pointer-events-none portfolio-bg" />
       <PortraitPresence />
-      <Header />
+      <div className="relative z-10">
+        <Header />
 
       <section className="mx-auto flex min-h-[88vh] max-w-[1400px] flex-col justify-between px-5 pb-8 pt-24 sm:min-h-[92vh] sm:px-10 sm:pb-10 sm:pt-28 lg:px-14">
 
@@ -513,6 +514,7 @@ export default function App() {
           <a href="mailto:chinedumjideofor@gmail.com" className="transition hover:text-white">Email</a>
         </div>
       </footer>
+      </div>
     </main>
   );
 }
