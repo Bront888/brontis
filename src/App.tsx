@@ -84,7 +84,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="work" className="scroll-mt-28 scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
+      <section id="work" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-10">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Selected work</p>
@@ -103,7 +103,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="ventures" className="scroll-mt-28 scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-28">
+      <section id="ventures" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-28">
         <div className="border-y border-white/10 py-8 sm:py-14">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -174,7 +174,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="osbront" className="scroll-mt-28 scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
+      <section id="osbront" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
         <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
           <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
@@ -251,7 +251,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="veridoux" className="scroll-mt-28 scroll-mt-28 "mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
+      <section id="veridoux" className="scroll-mt-28 "mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
         <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
           <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
@@ -329,7 +329,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="about" className="scroll-mt-28 scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-44">
+      <section id="about" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-44">
         <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">About me</p>
@@ -464,7 +464,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-28 scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-28 sm:px-10 sm:py-32 lg:px-14 lg:py-48">
+      <section id="contact" className="scroll-mt-28 "mx-auto max-w-[1400px] px-5 py-28 sm:px-10 sm:py-32 lg:px-14 lg:py-48">
         <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Contact</p>
