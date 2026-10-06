@@ -532,7 +532,7 @@ function PortraitPresence() {
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <motion.div
         style={{ x, y, rotate, scale, opacity, filter: useTransform([saturate, hue], ([sat, hueValue]) => `saturate(${sat}) hue-rotate(${hueValue}deg)` as string) }}
-        className="absolute right-[-9vw] top-[17vh] w-[58vw] max-w-[760px] sm:right-[-5vw] sm:w-[48vw] lg:right-[2vw] lg:top-[13vh] lg:w-[34vw]"
+        className="absolute right-[-18vw] top-[9vh] w-[92vw] max-w-[1180px] sm:right-[-14vw] sm:w-[76vw] lg:right-[-7vw] lg:top-[5vh] lg:w-[58vw]"
       >
         <div className="portrait-haze absolute -inset-16 rounded-full" />
         <img
