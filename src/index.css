@@ -104,3 +104,64 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+.portrait-haze {
+  background:
+    radial-gradient(circle at 48% 45%, rgba(34, 199, 242, 0.14), transparent 46%),
+    radial-gradient(circle at 70% 58%, rgba(11, 99, 246, 0.12), transparent 52%);
+  filter: blur(28px);
+}
+
+.portrait-sheen {
+  background:
+    linear-gradient(115deg, transparent 22%, rgba(255,255,255,0.08) 46%, transparent 62%),
+    radial-gradient(circle at 72% 34%, rgba(34,199,242,0.14), transparent 28%);
+  opacity: 0.75;
+}
+
+.portrait-particle {
+  --i: 0;
+  position: absolute;
+  left: calc(8% + (var(--i) * 4.7%));
+  top: calc(18% + (((var(--i) * 17) % 70) * 1%));
+  width: calc(2px + ((var(--i) % 3) * 1px));
+  height: calc(2px + ((var(--i) % 3) * 1px));
+  border-radius: 999px;
+  background: rgba(196, 225, 242, 0.48);
+  box-shadow: 0 0 12px rgba(34, 199, 242, 0.35);
+  opacity: 0;
+  animation: portrait-evaporate calc(4.5s + ((var(--i) % 5) * 0.8s)) ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.55s);
+}
+
+@keyframes portrait-evaporate {
+  0%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.6);
+  }
+  25% {
+    opacity: 0.65;
+  }
+  70% {
+    opacity: 0.18;
+    transform: translate3d(calc((var(--i) - 9) * 3px), -34px, 0) scale(1.1);
+  }
+}
+
+@media (max-width: 640px) {
+  .portrait-haze {
+    filter: blur(18px);
+  }
+
+  .portrait-particle {
+    opacity: 0;
+    animation-duration: 5.5s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-particle {
+    animation: none;
+    opacity: 0;
+  }
+}
