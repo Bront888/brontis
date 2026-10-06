@@ -104,6 +104,54 @@ export default function App() {
         </div>
       </section>
 
+      <section id="ventures" className="mx-auto max-w-[1400px] px-6 py-20 sm:px-10 lg:px-14 lg:py-28">
+        <div className="border-y border-white/10 py-10 sm:py-14">
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Built / shaped</p>
+              <h2 className="mt-4 max-w-4xl text-5xl font-medium leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-[7rem]">
+                The work I’m
+                <br />
+                <em className="font-light text-[#c4d5e5]">putting my name behind.</em>
+              </h2>
+            </div>
+            <p className="max-w-xs text-sm leading-6 text-[#c4d5e5] sm:text-right">
+              Two projects that sit closest to the way I think about product, technology, identity, and ambition.
+            </p>
+          </div>
+
+          <div className="mt-12 divide-y divide-white/10 border-t border-white/10">
+            <a href="#osbront" className="group grid gap-6 py-8 sm:grid-cols-[100px_1fr_auto] sm:items-center">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">01 / Health</span>
+              <div className="flex items-center gap-5">
+                <div className="glass-soft flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-3 transition-transform duration-500 group-hover:scale-105">
+                  <img src="/projects/osbront-logo.webp" alt="" className="max-h-full max-w-full object-contain" />
+                </div>
+                <div>
+                  <h3 className="text-4xl font-medium tracking-[-0.05em] sm:text-6xl">OSBRONT</h3>
+                  <p className="mt-2 text-sm text-[#9fb5c9]">Health-tech / Product</p>
+                </div>
+              </div>
+              <ArrowUpRight className="hidden sm:block transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" size={24} />
+            </a>
+
+            <a href="#veridoux" className="group grid gap-6 py-8 sm:grid-cols-[100px_1fr_auto] sm:items-center">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">02 / Creative</span>
+              <div className="flex items-center gap-5">
+                <div className="glass-soft flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-3 transition-transform duration-500 group-hover:scale-105">
+                  <img src="/projects/veridoux-logo.webp" alt="" className="max-h-full max-w-full object-contain" />
+                </div>
+                <div>
+                  <h3 className="text-4xl font-medium tracking-[-0.05em] sm:text-6xl">VERIDOUX</h3>
+                  <p className="mt-2 text-sm text-[#9fb5c9]">Digital / Creative</p>
+                </div>
+              </div>
+              <ArrowUpRight className="hidden sm:block transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" size={24} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section id="osbront" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
         <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
           <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
@@ -425,10 +473,8 @@ export default function App() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">GitHub</a>
                 <a href="https://instagram.com/brontis8" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">Instagram</a>
-                <a href="https://instagram.com/osbrontgroup" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">OSBRONT</a>
                 <a href="https://tiktok.com/@brontis88_8" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">TikTok</a>
                 <a href="https://wa.me/2348104690971" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">WhatsApp</a>
-                <a href="#" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">VERIDOUX · Incoming</a>
                 <a href="mailto:chinedumjideofor@gmail.com" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">Email</a>
               </div>
             </div>
