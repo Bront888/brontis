@@ -123,16 +123,19 @@ a {
   --i: 0;
   position: absolute;
   left: calc(8% + (var(--i) * 4.7%));
-  top: calc(18% + (((var(--i) * 17) % 70) * 1%));
-  width: calc(2px + ((var(--i) % 3) * 1px));
-  height: calc(2px + ((var(--i) % 3) * 1px));
+  /* Fixed: Changed operator % to mod() function */
+  top: calc(18% + (mod(var(--i) * 17, 70) * 1%));
+  width: calc(2px + (mod(var(--i), 3) * 1px));
+  height: calc(2px + (mod(var(--i), 3) * 1px));
   border-radius: 999px;
   background: rgba(196, 225, 242, 0.48);
   box-shadow: 0 0 12px rgba(34, 199, 242, 0.35);
   opacity: 0;
-  animation: portrait-evaporate calc(4.5s + ((var(--i) % 5) * 0.8s)) ease-in-out infinite;
-  animation-delay: calc(var(--i) * -0.55s);
+  /* Fixed: Changed operator % to mod() function */
+  animation: portrait-evaporate calc(4.5s + (mod(var(--i), 5) * 0.8s)) ease-in-out infinite;
+  animation-delay: calc((var(--i) + 1) * -0.55s); /* Balanced the delay offset */
 }
+
 
 @keyframes portrait-evaporate {
   0%, 100% {
