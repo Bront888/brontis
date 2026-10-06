@@ -77,7 +77,7 @@ export default function App() {
             </span>
             Scroll to explore
           </a>
-          <span className="hidden text-right text-xs leading-5 text-white/35 sm:block">
+          <span className="hidden text-right text-xs leading-5 text-[#071a3d]/58 sm:block">
             Engineering · Product thinking
             <br />
             Visual communication
@@ -105,7 +105,7 @@ export default function App() {
       </section>
 
       <section id="osbront" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
-        <div className="glass overflow-hidden rounded-[2rem]">
+        <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
           <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(34,199,242,0.18),transparent_32%),radial-gradient(circle_at_70%_80%,rgba(11,99,246,0.2),transparent_36%)]" />
@@ -152,7 +152,7 @@ export default function App() {
               <div className="mt-12 grid gap-12 sm:grid-cols-2">
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-white/30">What I built</p>
-                  <ul className="mt-5 space-y-3 text-sm leading-6 text-[#071a3d]/68">
+                  <ul className="mt-5 space-y-3 text-sm leading-6 text-white/60">
                     <li>• Authentication and role-based access control</li>
                     <li>• Patient-owned medicine ordering workflows</li>
                     <li>• Pharmacy and courier role foundations</li>
@@ -171,7 +171,7 @@ export default function App() {
 
               <div className="mt-12 flex flex-wrap gap-3">
                 {["FastAPI", "Python", "Flutter", "SQLAlchemy", "Alembic", "Supabase", "JWT", "pytest"].map((item) => (
-                  <span key={item} className="glass-soft rounded-full px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-[#071a3d]/68">
+                  <span key={item} className="glass-soft rounded-full px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-white/55">
                     {item}
                   </span>
                 ))}
@@ -208,7 +208,7 @@ export default function App() {
       </section>
 
       <section className="border-y border-white/10 bg-black/10 backdrop-blur-[2px]">
-        <div className="glass-soft mx-auto max-w-[1400px] rounded-[2rem] px-6 py-24 sm:px-10 lg:px-14 lg:py-32">
+        <div className="glass-soft mx-auto max-w-[1400px] rounded-[2rem] px-6 py-24 text-[#dbe8f5] sm:px-10 lg:px-14 lg:py-32">
           <p className="text-xs uppercase tracking-[0.2em] text-white/58">Capabilities</p>
           <div className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
             {["Product development", "Frontend engineering", "Backend systems", "Mobile applications", "UI / visual design", "Technical problem solving"].map((item, i) => (
@@ -265,7 +265,7 @@ export default function App() {
 function Header() {
   return (
     <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50">
-      <div className="glass mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-5 py-4 sm:mx-10 sm:px-7 lg:mx-14 lg:px-8">
+      <div className="glass mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-5 py-4 text-[#dbe8f5] sm:mx-10 sm:px-7 lg:mx-14 lg:px-8">
         <a href="#" className="text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
         <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
           <a href="#work" className="transition hover:text-white">Work</a>
@@ -300,7 +300,7 @@ function Project({
       transition={{ duration: 0.8, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
       className="group"
     >
-      <div className={`glass relative flex aspect-[1.55/1] items-center justify-center overflow-hidden rounded-[2rem] `}>
+      <div className={`glass relative flex aspect-[1.55/1] items-center justify-center overflow-hidden rounded-[2rem] text-[#dbe8f5] `}>
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
