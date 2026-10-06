@@ -40,7 +40,7 @@ const projects = [
 
 export default function App() {
   return (
-    <main className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[#e7f1fa]">
+    <main id="top" className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[#e7f1fa]">
       <div aria-hidden="true" className="pointer-events-none portfolio-bg" />
       <PortraitPresence />
       <div className="relative z-10">
@@ -577,7 +577,7 @@ function Header() {
     <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-0 sm:pt-0">
       <div className="glass mx-auto max-w-[1400px] rounded-full text-[#dbe8f5] sm:mx-10 lg:mx-14">
         <div className="flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4 lg:px-8">
-          <a href="#" aria-label="Back to top" onClick={() => setMenuOpen(false)} className="shrink-0 text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
+          <a href="#top" aria-label="Back to top" onClick={() => setMenuOpen(false)} className="shrink-0 text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
 
           <div className="hidden items-center gap-7 sm:flex">
             <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">Software / Product / Design</span>
