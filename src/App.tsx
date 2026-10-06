@@ -44,8 +44,8 @@ export default function App() {
       <div aria-hidden="true" className="portfolio-bg" />
       <Header />
 
-      <section className="mx-auto flex min-h-[92vh] max-w-[1400px] flex-col justify-between px-6 pb-10 pt-8 sm:px-10 lg:px-14">
-        <div className="glass-soft flex items-center justify-between rounded-full px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#c4d5e5]">
+      <section className="mx-auto flex min-h-[88vh] max-w-[1400px] flex-col justify-between px-5 pb-8 pt-6 sm:min-h-[92vh] sm:px-10 sm:pb-10 sm:pt-8 lg:px-14">
+        <div className="glass-soft flex items-center justify-between rounded-full px-3 py-2 text-[9px] uppercase tracking-[0.16em] text-[#c4d5e5] sm:px-4 sm:text-[11px] sm:tracking-[0.22em]">
           <span>Software / Product / Design</span>
           <span className="hidden sm:block">Lagos, Nigeria · 2026</span>
         </div>
@@ -54,19 +54,19 @@ export default function App() {
           initial={{ opacity: 0, y: 42 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="pb-8 pt-28 sm:pt-36"
+          className="pb-8 pt-24 sm:pt-36"
         >
-          <p className="mb-7 max-w-xl text-sm leading-6 text-[#c4d5e5]">
+          <p className="mb-6 max-w-xl text-sm leading-6 text-[#c4d5e5] sm:mb-7">
             I’m Brontis — a software developer and digital product builder
             interested in turning ambitious ideas into things people can actually use.
           </p>
 
-          <h1 className="max-w-[1200px] text-[17vw] font-medium leading-[0.78] tracking-[-0.075em] sm:text-[13vw] lg:text-[11vw]">
+          <h1 className="max-w-[1200px] text-[16vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[13vw] sm:leading-[0.78] lg:text-[11vw]">
             I build
             <br />
-            <span className="ml-[8vw] italic font-light text-[#c4d5e5]">things</span>
+            <span className="ml-[6vw] italic font-light text-[#c4d5e5] sm:ml-[8vw]">things</span>
             <br />
-            <span className="ml-[17vw]">that matter.</span>
+            <span className="ml-[12vw] sm:ml-[17vw]">that matter.</span>
           </h1>
         </motion.div>
 
@@ -85,8 +85,8 @@ export default function App() {
         </div>
       </section>
 
-      <section id="work" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
-        <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+      <section id="work" className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
+        <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-10">
           <div className="lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Selected work</p>
             <h2 className="mt-5 max-w-sm text-5xl font-light leading-[0.92] tracking-[-0.055em] sm:text-6xl">
@@ -96,7 +96,7 @@ export default function App() {
             </h2>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-16 sm:space-y-20">
             {projects.map((project, i) => (
               <Project key={project.title} project={project} index={i} />
             ))}
@@ -104,8 +104,8 @@ export default function App() {
         </div>
       </section>
 
-      <section id="ventures" className="mx-auto max-w-[1400px] px-6 py-20 sm:px-10 lg:px-14 lg:py-28">
-        <div className="border-y border-white/10 py-10 sm:py-14">
+      <section id="ventures" className="mx-auto max-w-[1400px] px-5 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-28">
+        <div className="border-y border-white/10 py-8 sm:py-14">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Built / shaped</p>
@@ -120,15 +120,15 @@ export default function App() {
             </p>
           </div>
 
-          <div className="mt-12 divide-y divide-white/10 border-t border-white/10">
-            <div className="group grid gap-5 py-8 sm:grid-cols-[100px_1fr_auto] sm:items-center">
+          <div className="mt-10 divide-y divide-white/10 border-t border-white/10 sm:mt-12">
+            <div className="group grid gap-5 py-7 sm:grid-cols-[100px_1fr_auto] sm:items-center sm:py-8">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">01 / Health</span>
               <a href="#osbront" className="flex min-w-0 items-center gap-5">
                 <div className="glass-soft flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-3 transition-transform duration-500 group-hover:scale-105">
                   <img src="/projects/osbront-logo.webp" alt="" className="max-h-full max-w-full object-contain" />
                 </div>
                 <div>
-                  <h3 className="text-4xl font-medium tracking-[-0.05em] sm:text-6xl">OSBRONT</h3>
+                  <h3 className="text-3xl font-medium tracking-[-0.05em] sm:text-6xl">OSBRONT</h3>
                   <p className="mt-2 text-sm text-[#9fb5c9]">Health-tech / Product</p>
                 </div>
               </a>
@@ -175,7 +175,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="osbront" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
+      <section id="osbront" className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
         <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
           <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
@@ -199,13 +199,13 @@ export default function App() {
               </div>
             </div>
 
-            <div className="p-8 sm:p-12 lg:p-16">
+            <div className="p-7 sm:p-12 lg:p-16">
               <p className="text-xs uppercase tracking-[0.2em] text-white/38">The project</p>
-              <h2 className="mt-5 max-w-3xl text-5xl font-light leading-[0.9] tracking-[-0.055em] sm:text-7xl">
+              <h2 className="mt-5 max-w-3xl text-4xl font-light leading-[0.92] tracking-[-0.055em] sm:text-7xl">
                 Building the infrastructure behind a more reachable healthcare experience.
               </h2>
 
-              <div className="mt-14 grid gap-10 border-y border-white/10 py-8 sm:grid-cols-3">
+              <div className="mt-12 grid gap-7 border-y border-white/10 py-7 sm:grid-cols-3 sm:gap-10 sm:py-8">
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.18em] text-white/30">Role</p>
                   <p className="mt-3 text-sm leading-6 text-white/65">Product · Engineering · Design</p>
@@ -220,7 +220,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="mt-12 grid gap-12 sm:grid-cols-2">
+              <div className="mt-10 grid gap-10 sm:mt-12 sm:grid-cols-2 sm:gap-12">
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-white/30">What I built</p>
                   <ul className="mt-5 space-y-3 text-sm leading-6 text-white/60">
@@ -330,11 +330,11 @@ export default function App() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-44">
+      <section id="about" className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-44">
         <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">About me</p>
-            <p className="mt-5 max-w-xs text-sm leading-6 text-[#c4d5e5]">
+            <p className="mt-4 max-w-xs text-sm leading-6 text-[#c4d5e5] sm:mt-5">
               Software, product thinking, and visual communication — brought together around useful ideas.
             </p>
           </div>
@@ -358,7 +358,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="mt-20">
+            <div className="mt-16 sm:mt-20">
               <div className="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
                 <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">How I work</p>
                 <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">01 — 03</span>
@@ -395,7 +395,7 @@ export default function App() {
       </section>
 
       <section className="border-y border-white/10 bg-black/10 backdrop-blur-[2px]">
-        <div className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-36">
+        <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-36">
           <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Capabilities</p>
@@ -465,16 +465,16 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" className="mx-auto max-w-[1400px] px-6 py-32 sm:px-10 lg:px-14 lg:py-48">
+      <section id="contact" className="mx-auto max-w-[1400px] px-5 py-28 sm:px-10 sm:py-32 lg:px-14 lg:py-48">
         <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Contact</p>
-            <h2 className="mt-10 max-w-5xl text-6xl font-light leading-[0.88] tracking-[-0.065em] sm:text-8xl lg:text-[9rem]">
+            <h2 className="mt-8 max-w-5xl text-5xl font-light leading-[0.9] tracking-[-0.065em] sm:mt-10 sm:text-8xl lg:text-[9rem]">
               Let’s make
               <br />
               something <em className="text-[#c4d5e5]">real.</em>
             </h2>
-            <p className="mt-10 max-w-xl text-sm leading-7 text-[#c4d5e5]">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-[#c4d5e5] sm:mt-10">
               Have a product idea, technical challenge, creative project, or simply
               want to start a conversation? I’m always interested in seeing what’s next.
             </p>
@@ -579,10 +579,10 @@ function Project({
           )}
         </motion.div>
         <div className={`absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent`} />
-        <div className="absolute inset-x-8 bottom-7 flex items-end justify-between text-white sm:inset-x-10 sm:bottom-10">
+        <div className="absolute inset-x-5 bottom-5 flex items-end justify-between text-white sm:inset-x-10 sm:bottom-10">
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/60">{project.category}</p>
-            <h3 className="mt-2 text-4xl font-medium tracking-[-0.05em] sm:text-6xl">{project.title}</h3>
+            <h3 className="mt-2 text-3xl font-medium tracking-[-0.05em] sm:text-6xl">{project.title}</h3>
           </div>
           <a
             href={project.title === "OSBRONT" ? "#osbront" : project.title === "VERIDOUX" ? "#veridoux" : "#contact"}
