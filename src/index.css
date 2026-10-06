@@ -120,51 +120,38 @@ a {
 }
 
 .portrait-particle {
-  --i: 0;
   position: absolute;
-  left: calc(8% + (var(--i) * 4.7%));
-  /* Fixed: Changed operator % to mod() function */
-  top: calc(18% + (mod(var(--i) * 17, 70) * 1%));
-  width: calc(2px + (mod(var(--i), 3) * 1px));
-  height: calc(2px + (mod(var(--i), 3) * 1px));
+  left: var(--left);
+  top: var(--top);
+  width: var(--size);
+  height: var(--size);
   border-radius: 999px;
-  background: rgba(196, 225, 242, 0.48);
-  box-shadow: 0 0 12px rgba(34, 199, 242, 0.35);
-  opacity: 0;
-  /* Fixed: Changed operator % to mod() function */
-  animation: portrait-evaporate calc(4.5s + (mod(var(--i), 5) * 0.8s)) ease-in-out infinite;
-  animation-delay: calc((var(--i) + 1) * -0.55s); /* Balanced the delay offset */
+  background: rgba(196, 225, 242, 0.9);
+  box-shadow:
+    0 0 8px rgba(196, 225, 242, 0.75),
+    0 0 18px rgba(34, 199, 242, 0.55);
+  opacity: 0.72;
+  animation: portrait-evaporate var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
 }
-
 
 @keyframes portrait-evaporate {
   0%, 100% {
-    opacity: 0;
+    opacity: 0.12;
     transform: translate3d(0, 18px, 0) scale(0.6);
   }
   25% {
-    opacity: 0.65;
+    opacity: 0.95;
   }
   70% {
-    opacity: 0.18;
-    transform: translate3d(calc((var(--i) - 9) * 3px), -34px, 0) scale(1.1);
-  }
-}
-
-@media (max-width: 640px) {
-  .portrait-haze {
-    filter: blur(18px);
-  }
-
-  .portrait-particle {
-    opacity: 0;
-    animation-duration: 5.5s;
+    opacity: 0.42;
+    transform: translate3d(var(--drift), -34px, 0) scale(1.15);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .portrait-particle {
     animation: none;
-    opacity: 0;
+    opacity: 0.55;
   }
 }
