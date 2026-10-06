@@ -492,7 +492,7 @@ export default function App() {
 
             <div className="w-full border-t border-white/10 pt-6 lg:max-w-sm">
               <p className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">Find me online</p>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-5 flex flex-wrap gap-2 sm:gap-3">
                 <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">GitHub</a>
                 <a href="https://instagram.com/brontis8" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">Instagram</a>
                 <a href="https://tiktok.com/@brontis88_8" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">TikTok</a>
@@ -676,7 +676,7 @@ function Project({
           <a
             href={project.title === "OSBRONT" ? "#osbront" : project.title === "VERIDOUX" ? "#veridoux" : "#contact"}
             aria-label={project.title === "OSBRONT" ? "Explore OSBRONT case study" : project.title === "VERIDOUX" ? "Explore VERIDOUX case study" : `Discuss ${project.title}`}
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 transition hover:bg-white hover:text-black sm:h-11 sm:w-11"
+            className="flex h-12 w-12 shrink-0 touch-manipulation items-center justify-center rounded-full border border-white/25 transition hover:bg-white hover:text-black sm:h-11 sm:w-11"
           >
             <ArrowUpRight size={17} />
           </a>
