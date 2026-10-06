@@ -181,6 +181,84 @@ export default function App() {
         </div>
       </section>
 
+      <section id="veridoux" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
+        <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
+          <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_24%,rgba(196,161,82,0.14),transparent_30%),radial-gradient(circle_at_72%_78%,rgba(34,199,242,0.06),transparent_34%)]" />
+              <div className="relative flex h-full flex-col justify-between">
+                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-white/40">
+                  <span>Case study · 02</span>
+                  <span>VERIDOUX</span>
+                </div>
+                <div className="flex flex-1 items-center justify-center py-16">
+                  <img
+                    src="/projects/veridoux-logo.webp"
+                    alt="VERIDOUX"
+                    className="w-[68%] max-w-[360px] object-contain drop-shadow-[0_30px_80px_rgba(0,0,0,0.55)]"
+                  />
+                </div>
+                <p className="max-w-sm text-sm leading-6 text-white/45">
+                  A consulting identity shaped to communicate clarity, trust,
+                  and premium value across digital touchpoints.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 sm:p-12 lg:p-16">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/38">The project</p>
+              <h2 className="mt-5 max-w-3xl text-5xl font-light leading-[0.9] tracking-[-0.055em] sm:text-7xl">
+                Designing a digital identity with the weight of a serious consultancy.
+              </h2>
+
+              <div className="mt-14 grid gap-10 border-y border-white/10 py-8 sm:grid-cols-3">
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/30">Role</p>
+                  <p className="mt-3 text-sm leading-6 text-white/65">Brand · Creative · Digital direction</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/30">Focus</p>
+                  <p className="mt-3 text-sm leading-6 text-white/65">Identity · Presentation · Web</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/30">Approach</p>
+                  <p className="mt-3 text-sm leading-6 text-white/65">Clarity · Trust · Premium communication</p>
+                </div>
+              </div>
+
+              <div className="mt-12 grid gap-12 sm:grid-cols-2">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-white/30">What I shaped</p>
+                  <ul className="mt-5 space-y-3 text-sm leading-6 text-white/60">
+                    <li>• Visual identity and brand direction</li>
+                    <li>• Premium presentation and communication system</li>
+                    <li>• Digital visual language for web experiences</li>
+                    <li>• Service-focused content and layout direction</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-white/30">Creative focus</p>
+                  <p className="mt-5 text-sm leading-7 text-white/50">
+                    The work balances a restrained, premium aesthetic with the
+                    clarity a consulting brand needs: strong hierarchy, deliberate
+                    spacing, confident typography, and communication that feels
+                    credible rather than decorative.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-12 flex flex-wrap gap-3">
+                {["Brand identity", "Creative direction", "Visual design", "Presentation", "Web", "Content systems"].map((item) => (
+                  <span key={item} className="glass-soft rounded-full px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-white/55">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-44">
         <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
@@ -327,8 +405,8 @@ function Project({
             <h3 className="mt-2 text-4xl font-medium tracking-[-0.05em] sm:text-6xl">{project.title}</h3>
           </div>
           <a
-            href={project.title === "OSBRONT" ? "#osbront" : "#contact"}
-            aria-label={project.title === "OSBRONT" ? "Explore OSBRONT case study" : `Discuss ${project.title}`}
+            href={project.title === "OSBRONT" ? "#osbront" : project.title === "VERIDOUX" ? "#veridoux" : "#contact"}
+            aria-label={project.title === "OSBRONT" ? "Explore OSBRONT case study" : project.title === "VERIDOUX" ? "Explore VERIDOUX case study" : `Discuss ${project.title}`}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 transition hover:bg-white hover:text-black"
           >
             <ArrowUpRight size={17} />
