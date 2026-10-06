@@ -575,7 +575,7 @@ function Header() {
 
   return (
     <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-0 sm:pt-0">
-      <div className="glass mx-auto max-w-[1400px] rounded-full text-[#dbe8f5] sm:mx-10 lg:mx-14">
+      <div className="glass mx-auto max-w-[1400px] rounded-none text-[#dbe8f5] sm:mx-10 sm:rounded-full lg:mx-14">
         <div className="flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4 lg:px-8">
           <a href="#top" aria-label="Back to top" onClick={() => setMenuOpen(false)} className="flex shrink-0 items-center gap-2"><img src="/brontis-logo.png" alt="Brontis" className="h-10 w-auto object-contain sm:h-12 lg:h-14" /><span className="sr-only">BRONTIS</span></a>
 
