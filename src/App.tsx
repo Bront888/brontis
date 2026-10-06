@@ -124,7 +124,7 @@ export default function App() {
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">01 / Health</span>
               <a href="#osbront" className="flex min-w-0 items-center gap-5">
                 <div className="glass-soft flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-3 transition-transform duration-500 group-hover:scale-105">
-                  <img src="/projects/osbront-logo.webp" alt="" className="max-h-full max-w-full object-contain" />
+                  <img src="/projects/osbront-logo.webp" alt="" loading="lazy" decoding="async" className="max-h-full max-w-full object-contain" />
                 </div>
                 <div>
                   <h3 className="text-3xl font-medium tracking-[-0.05em] sm:text-6xl">OSBRONT</h3>
@@ -153,7 +153,7 @@ export default function App() {
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">02 / Creative</span>
               <a href="#veridoux" className="flex min-w-0 items-center gap-5">
                 <div className="glass-soft flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-3 transition-transform duration-500 group-hover:scale-105">
-                  <img src="/projects/veridoux-logo.webp" alt="" className="max-h-full max-w-full object-contain" />
+                  <img src="/projects/veridoux-logo.webp" alt="" loading="lazy" decoding="async" className="max-h-full max-w-full object-contain" />
                 </div>
                 <div>
                   <h3 className="text-4xl font-medium tracking-[-0.05em] sm:text-6xl">VERIDOUX</h3>
@@ -188,6 +188,8 @@ export default function App() {
                   <img
                     src="/projects/osbront-logo.webp"
                     alt="OSBRONT"
+                    loading="lazy"
+                    decoding="async"
                     className="w-[68%] max-w-[360px] object-contain drop-shadow-[0_30px_80px_rgba(0,0,0,0.55)]"
                   />
                 </div>
@@ -265,6 +267,8 @@ export default function App() {
                   <img
                     src="/projects/veridoux-logo.webp"
                     alt="VERIDOUX"
+                    loading="lazy"
+                    decoding="async"
                     className="w-[68%] max-w-[360px] object-contain drop-shadow-[0_30px_80px_rgba(0,0,0,0.55)]"
                   />
                 </div>
@@ -658,6 +662,8 @@ function Project({
             <img
               src={project.image}
               alt={`${project.title} logo`}
+              loading="lazy"
+              decoding="async"
               className={`transition-transform duration-700 ${project.imageClass}`}
             />
           ) : (
