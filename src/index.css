@@ -12,6 +12,11 @@ html {
   background: #05080d;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -153,5 +158,22 @@ a {
   .portrait-particle {
     animation: none;
     opacity: 0.55;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .portrait-haze {
+    filter: blur(20px);
+  }
+
+  .portrait-sheen {
+    opacity: 0.58;
+  }
+
+  .portrait-particle {
+    box-shadow:
+      0 0 6px rgba(196, 225, 242, 0.65),
+      0 0 12px rgba(34, 199, 242, 0.42);
   }
 }
