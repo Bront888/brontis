@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brontis-portfolio.vercel.app/sitemap.xml
+Sitemap: https://brontis.vercel.app/sitemap.xml
