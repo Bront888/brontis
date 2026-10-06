@@ -522,10 +522,10 @@ export default function App() {
 
 function PortraitPresence() {
   const { scrollYProgress } = useScroll();
-  const rotate = useTransform(scrollYProgress, [0, 0.22, 0.52, 0.82, 1], [-5, 3, -4, 7, 13]);
-  const x = useTransform(scrollYProgress, [0, 0.5, 1], ["8vw", "2vw", "-6vw"]);
-  const y = useTransform(scrollYProgress, [0, 0.5, 1], ["2vh", "-2vh", "5vh"]);
-  const scale = useTransform(scrollYProgress, [0, 0.35, 0.75, 1], [0.92, 1, 0.94, 0.86]);
+  const rotate = useTransform(scrollYProgress, [0, 0.2, 0.5, 0.8, 1], [-10, 6, -8, 9, 16]);
+  const x = useTransform(scrollYProgress, [0, 0.45, 1], ["24vw", "0vw", "-32vw"]);
+  const y = useTransform(scrollYProgress, [0, 0.45, 1], ["0vh", "-4vh", "6vh"]);
+  const scale = useTransform(scrollYProgress, [0, 0.35, 0.7, 1], [1.05, 1.16, 1.08, 0.98]);
   const opacity = useTransform(scrollYProgress, [0, 0.16, 0.48, 0.78, 1], [0.72, 0.9, 0.78, 0.88, 0.68]);
   const saturate = useTransform(scrollYProgress, [0, 0.35, 0.7, 1], [0.9, 1.25, 0.8, 1.4]);
   const hue = useTransform(scrollYProgress, [0, 0.5, 1], [0, 10, -12]);
@@ -534,7 +534,7 @@ function PortraitPresence() {
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <motion.div
         style={{ x, y, rotate, scale, opacity, filter: useTransform([saturate, hue], ([sat, hueValue]) => `saturate(${sat}) hue-rotate(${hueValue}deg)` as string) }}
-        className="absolute right-[-10vw] top-[10vh] w-[72vw] max-w-[920px] sm:right-[-8vw] sm:w-[60vw] lg:right-[-3vw] lg:top-[7vh] lg:w-[45vw]"
+        className="absolute right-[-12vw] top-[8vh] w-[82vw] max-w-[1080px] sm:right-[-10vw] sm:w-[68vw] lg:right-[-8vw] lg:top-[5vh] lg:w-[54vw]"
       >
         <div className="portrait-haze absolute -inset-16 rounded-full" />
         <img
