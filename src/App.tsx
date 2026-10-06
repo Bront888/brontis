@@ -395,23 +395,40 @@ export default function App() {
       </section>
 
       <section id="contact" className="mx-auto max-w-[1400px] px-6 py-32 sm:px-10 lg:px-14 lg:py-48">
-        <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Contact</p>
-        <div className="mt-10 flex flex-col justify-between gap-16 lg:flex-row lg:items-end">
-          <h2 className="max-w-5xl text-6xl font-light leading-[0.88] tracking-[-0.065em] sm:text-8xl lg:text-[9rem]">
-            Let’s make
-            <br />
-            something <em className="text-[#c4d5e5]">real.</em>
-          </h2>
-          <div className="shrink-0">
+        <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Contact</p>
+            <h2 className="mt-10 max-w-5xl text-6xl font-light leading-[0.88] tracking-[-0.065em] sm:text-8xl lg:text-[9rem]">
+              Let’s make
+              <br />
+              something <em className="text-[#c4d5e5]">real.</em>
+            </h2>
+            <p className="mt-10 max-w-xl text-sm leading-7 text-[#c4d5e5]">
+              Have a product idea, technical challenge, creative project, or simply
+              want to start a conversation? I’m always interested in seeing what’s next.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-8 lg:items-end">
             <a
               href="mailto:chinedumjideofor@gmail.com"
-              className="glass group flex h-28 w-28 items-center justify-center rounded-full bg-[#f4f2ed] text-center text-xs font-medium uppercase tracking-[0.12em] text-black transition-transform duration-500 hover:scale-110"
+              className="glass group flex h-32 w-32 items-center justify-center rounded-full text-center text-xs font-medium uppercase tracking-[0.12em] text-[#e7f1fa] transition-transform duration-500 hover:scale-110"
             >
               Get in
               <br />
               touch
               <ArrowUpRight size={14} className="ml-1 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
             </a>
+
+            <div className="w-full border-t border-white/10 pt-6 lg:max-w-sm">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">Find me online</p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">GitHub</a>
+                <a href="mailto:chinedumjideofor@gmail.com" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">Email</a>
+                <a href="#" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">LinkedIn</a>
+                <a href="#" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">X</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
