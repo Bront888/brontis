@@ -44,11 +44,8 @@ export default function App() {
       <div aria-hidden="true" className="pointer-events-none portfolio-bg" />
       <Header />
 
-      <section className="mx-auto flex min-h-[88vh] max-w-[1400px] flex-col justify-between px-5 pb-8 pt-6 sm:min-h-[92vh] sm:px-10 sm:pb-10 sm:pt-8 lg:px-14">
-        <div className="glass-soft flex items-center justify-between rounded-full px-3 py-2 text-[9px] uppercase tracking-[0.16em] text-[#c4d5e5] sm:px-4 sm:text-[11px] sm:tracking-[0.22em]">
-          <span>Software / Product / Design</span>
-          <span className="hidden sm:block">Lagos, Nigeria · 2026</span>
-        </div>
+      <section className="mx-auto flex min-h-[88vh] max-w-[1400px] flex-col justify-between px-5 pb-8 pt-24 sm:min-h-[92vh] sm:px-10 sm:pb-10 sm:pt-28 lg:px-14">
+
 
         <motion.div
           initial={{ opacity: 0, y: 42 }}
@@ -521,14 +518,22 @@ export default function App() {
 
 function Header() {
   return (
-    <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50">
-      <div className="glass mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-5 py-4 text-[#dbe8f5] sm:mx-10 sm:px-7 lg:mx-14 lg:px-8">
-        <a href="#" aria-label="Back to top" className="text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
-        <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
+    <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-0 sm:pt-0">
+      <div className="glass mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-4 py-3 text-[#dbe8f5] sm:mx-10 sm:px-7 sm:py-4 lg:mx-14 lg:px-8">
+        <a href="#" aria-label="Back to top" className="shrink-0 text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
+
+        <div className="hidden items-center gap-7 sm:flex">
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">Software / Product / Design</span>
+          <span className="h-3 w-px bg-white/15" />
+          <span className="text-[10px] uppercase tracking-[0.18em] text-[#9fb5c9]">Lagos, Nigeria · 2026</span>
+        </div>
+
+        <nav className="hidden items-center gap-7 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
           <a href="#work" className="transition hover:text-white">Work</a>
           <a href="#about" className="transition hover:text-white">About</a>
           <a href="#contact" className="transition hover:text-white">Contact</a>
         </nav>
+
         <a href="mailto:chinedumjideofor@gmail.com" className="text-[10px] uppercase tracking-[0.16em] transition hover:text-white sm:text-[11px] sm:tracking-[0.18em]">
           <span className="sm:hidden">Available</span>
           <span className="hidden sm:inline">Available for work</span>
