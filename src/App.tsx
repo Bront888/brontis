@@ -121,9 +121,9 @@ export default function App() {
           </div>
 
           <div className="mt-12 divide-y divide-white/10 border-t border-white/10">
-            <a href="#osbront" className="group grid gap-6 py-8 sm:grid-cols-[100px_1fr_auto] sm:items-center">
+            <div className="group grid gap-5 py-8 sm:grid-cols-[100px_1fr_auto] sm:items-center">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">01 / Health</span>
-              <div className="flex items-center gap-5">
+              <a href="#osbront" className="flex min-w-0 items-center gap-5">
                 <div className="glass-soft flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-3 transition-transform duration-500 group-hover:scale-105">
                   <img src="/projects/osbront-logo.webp" alt="" className="max-h-full max-w-full object-contain" />
                 </div>
@@ -131,8 +131,8 @@ export default function App() {
                   <h3 className="text-4xl font-medium tracking-[-0.05em] sm:text-6xl">OSBRONT</h3>
                   <p className="mt-2 text-sm text-[#9fb5c9]">Health-tech / Product</p>
                 </div>
-              </div>
-              <div className="flex flex-col items-end gap-3">
+              </a>
+              <div className="flex items-center justify-between gap-5 sm:flex-col sm:items-end sm:gap-3">
                 <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" size={24} />
                 <span
                   onClick={(event) => event.stopPropagation()}
@@ -148,11 +148,11 @@ export default function App() {
                   </a>
                 </span>
               </div>
-            </a>
+            </div>
 
-            <a href="#veridoux" className="group grid gap-6 py-8 sm:grid-cols-[100px_1fr_auto] sm:items-center">
+            <div className="group grid gap-5 py-8 sm:grid-cols-[100px_1fr_auto] sm:items-center">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">02 / Creative</span>
-              <div className="flex items-center gap-5">
+              <a href="#veridoux" className="flex min-w-0 items-center gap-5">
                 <div className="glass-soft flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-3 transition-transform duration-500 group-hover:scale-105">
                   <img src="/projects/veridoux-logo.webp" alt="" className="max-h-full max-w-full object-contain" />
                 </div>
@@ -160,8 +160,8 @@ export default function App() {
                   <h3 className="text-4xl font-medium tracking-[-0.05em] sm:text-6xl">VERIDOUX</h3>
                   <p className="mt-2 text-sm text-[#9fb5c9]">Digital / Creative</p>
                 </div>
-              </div>
-              <div className="flex flex-col items-end gap-3">
+              </a>
+              <div className="flex items-center justify-between gap-5 sm:flex-col sm:items-end sm:gap-3">
                 <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" size={24} />
                 <span
                   onClick={(event) => event.stopPropagation()}
@@ -170,7 +170,7 @@ export default function App() {
                   <span className="cursor-default text-white/35">Instagram · Incoming</span>
                 </span>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -529,8 +529,9 @@ function Header() {
           <a href="#about" className="transition hover:text-white">About</a>
           <a href="#contact" className="transition hover:text-white">Contact</a>
         </nav>
-        <a href="mailto:chinedumjideofor@gmail.com" className="text-[11px] uppercase tracking-[0.18em] transition hover:text-white">
-          Available for work
+        <a href="mailto:chinedumjideofor@gmail.com" className="text-[10px] uppercase tracking-[0.16em] transition hover:text-white sm:text-[11px] sm:tracking-[0.18em]">
+          <span className="sm:hidden">Available</span>
+          <span className="hidden sm:inline">Available for work</span>
         </a>
       </div>
     </motion.header>
