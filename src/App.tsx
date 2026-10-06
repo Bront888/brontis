@@ -41,7 +41,7 @@ const projects = [
 export default function App() {
   return (
     <main className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[#e7f1fa]">
-      <div aria-hidden="true" className="portfolio-bg" />
+      <div aria-hidden="true" className="pointer-events-none portfolio-bg" />
       <Header />
 
       <section className="mx-auto flex min-h-[88vh] max-w-[1400px] flex-col justify-between px-5 pb-8 pt-6 sm:min-h-[92vh] sm:px-10 sm:pb-10 sm:pt-8 lg:px-14">
@@ -71,7 +71,7 @@ export default function App() {
         </motion.div>
 
         <div className="flex items-end justify-between">
-          <a href="#work" className="group flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-[#c4d5e5]">
+          <a href="#work" aria-label="Scroll to selected work" className="group flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-[#c4d5e5]">
             <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 transition group-hover:bg-white group-hover:text-black">
               <ArrowDown size={14} />
             </span>
@@ -523,7 +523,7 @@ function Header() {
   return (
     <motion.header initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }} className="fixed left-0 right-0 top-0 z-50">
       <div className="glass mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-5 py-4 text-[#dbe8f5] sm:mx-10 sm:px-7 lg:mx-14 lg:px-8">
-        <a href="#" className="text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
+        <a href="#" aria-label="Back to top" className="text-sm font-semibold tracking-[0.08em]">BRONTIS®</a>
         <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.18em] text-white/70 sm:flex">
           <a href="#work" className="transition hover:text-white">Work</a>
           <a href="#about" className="transition hover:text-white">About</a>
@@ -587,7 +587,7 @@ function Project({
           <a
             href={project.title === "OSBRONT" ? "#osbront" : project.title === "VERIDOUX" ? "#veridoux" : "#contact"}
             aria-label={project.title === "OSBRONT" ? "Explore OSBRONT case study" : project.title === "VERIDOUX" ? "Explore VERIDOUX case study" : `Discuss ${project.title}`}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 transition hover:bg-white hover:text-black"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 transition hover:bg-white hover:text-black sm:h-11 sm:w-11"
           >
             <ArrowUpRight size={17} />
           </a>
