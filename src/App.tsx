@@ -40,12 +40,12 @@ const projects = [
 
 export default function App() {
   return (
-    <main className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[#10284f]">
+    <main className="relative isolate min-h-screen overflow-x-hidden bg-transparent text-[#e7f1fa]">
       <div aria-hidden="true" className="portfolio-bg" />
       <Header />
 
       <section className="mx-auto flex min-h-[92vh] max-w-[1400px] flex-col justify-between px-6 pb-10 pt-8 sm:px-10 lg:px-14">
-        <div className="glass-soft flex items-center justify-between rounded-full px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#10284f]/68">
+        <div className="glass-soft flex items-center justify-between rounded-full px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#c4d5e5]">
           <span>Software / Product / Design</span>
           <span className="hidden sm:block">Lagos, Nigeria · 2026</span>
         </div>
@@ -56,7 +56,7 @@ export default function App() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="pb-8 pt-28 sm:pt-36"
         >
-          <p className="mb-7 max-w-xl text-sm leading-6 text-[#10284f]/68">
+          <p className="mb-7 max-w-xl text-sm leading-6 text-[#c4d5e5]">
             I’m Brontis — a software developer and digital product builder
             interested in turning ambitious ideas into things people can actually use.
           </p>
@@ -64,20 +64,20 @@ export default function App() {
           <h1 className="max-w-[1200px] text-[17vw] font-medium leading-[0.78] tracking-[-0.075em] sm:text-[13vw] lg:text-[11vw]">
             I build
             <br />
-            <span className="ml-[8vw] italic font-light text-[#10284f]/68">things</span>
+            <span className="ml-[8vw] italic font-light text-[#c4d5e5]">things</span>
             <br />
             <span className="ml-[17vw]">that matter.</span>
           </h1>
         </motion.div>
 
         <div className="flex items-end justify-between">
-          <a href="#work" className="group flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-[#10284f]/68">
+          <a href="#work" className="group flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-[#c4d5e5]">
             <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 transition group-hover:bg-white group-hover:text-black">
               <ArrowDown size={14} />
             </span>
             Scroll to explore
           </a>
-          <span className="hidden text-right text-xs leading-5 text-[#10284f]/58 sm:block">
+          <span className="hidden text-right text-xs leading-5 text-[#9fb5c9] sm:block">
             Engineering · Product thinking
             <br />
             Visual communication
@@ -88,7 +88,7 @@ export default function App() {
       <section id="work" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
         <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#10284f]/58">Selected work</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Selected work</p>
             <h2 className="mt-5 max-w-sm text-5xl font-light leading-[0.92] tracking-[-0.055em] sm:text-6xl">
               Built with
               <br />
@@ -262,7 +262,7 @@ export default function App() {
       <section id="about" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-44">
         <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#10284f]/58">About me</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">About me</p>
           </div>
           <div>
             <h2 className="max-w-5xl text-5xl font-light leading-[0.95] tracking-[-0.055em] sm:text-7xl lg:text-[6.4rem]">
@@ -270,12 +270,12 @@ export default function App() {
               <em className="text-white/58">engineering</em>, design and ideas meet.
             </h2>
             <div className="mt-14 grid gap-10 border-t border-white/10 pt-8 sm:grid-cols-2">
-              <p className="text-sm leading-7 text-[#10284f]/68">
+              <p className="text-sm leading-7 text-[#c4d5e5]">
                 I build across web, mobile and backend systems, but technology is
                 never the starting point. The problem is. I care about why something
                 should exist, who it serves, and how well it works.
               </p>
-              <p className="text-sm leading-7 text-[#10284f]/68">
+              <p className="text-sm leading-7 text-[#c4d5e5]">
                 My work is deliberately broad: software engineering, product
                 thinking, visual communication, and the curiosity to keep learning
                 whatever the next project requires.
@@ -307,12 +307,12 @@ export default function App() {
       </section>
 
       <section id="contact" className="mx-auto max-w-[1400px] px-6 py-32 sm:px-10 lg:px-14 lg:py-48">
-        <p className="text-xs uppercase tracking-[0.2em] text-[#10284f]/58">Contact</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Contact</p>
         <div className="mt-10 flex flex-col justify-between gap-16 lg:flex-row lg:items-end">
           <h2 className="max-w-5xl text-6xl font-light leading-[0.88] tracking-[-0.065em] sm:text-8xl lg:text-[9rem]">
             Let’s make
             <br />
-            something <em className="text-[#10284f]/68">real.</em>
+            something <em className="text-[#c4d5e5]">real.</em>
           </h2>
           <div className="shrink-0">
             <a
@@ -328,7 +328,7 @@ export default function App() {
         </div>
       </section>
 
-      <footer className="mx-auto flex max-w-[1400px] flex-col gap-5 border-t border-[#071a3d]/15 px-6 py-8 text-[11px] uppercase tracking-[0.15em] text-[#10284f]/58 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
+      <footer className="mx-auto flex max-w-[1400px] flex-col gap-5 border-t border-[#071a3d]/15 px-6 py-8 text-[11px] uppercase tracking-[0.15em] text-[#9fb5c9] sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14">
         <span>© {new Date().getFullYear()} Brontis</span>
         <div className="flex gap-5">
           <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" className="transition hover:text-white">GitHub</a>
@@ -414,8 +414,8 @@ function Project({
         </div>
       </div>
       <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.55, delay: 0.12 }} className="mt-6 grid gap-6 border-b border-white/10 pb-8 sm:grid-cols-[1fr_0.7fr]">
-        <p className="max-w-xl text-base leading-7 text-[#10284f]/68">{project.description}</p>
-        <p className="text-xs uppercase tracking-[0.15em] text-[#10284f]/52 sm:text-right">{project.detail}</p>
+        <p className="max-w-xl text-base leading-7 text-[#c4d5e5]">{project.description}</p>
+        <p className="text-xs uppercase tracking-[0.15em] text-[#9fb5c9] sm:text-right">{project.detail}</p>
       </motion.div>
     </motion.article>
   );
