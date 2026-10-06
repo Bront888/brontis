@@ -53,14 +53,14 @@ export default function App() {
           initial={{ opacity: 0, y: 42 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="pb-8 pt-24 sm:pt-36"
+          className="max-w-[980px] pb-8 pt-20 sm:pt-32 lg:pt-36"
         >
           <p className="mb-6 max-w-xl text-sm leading-6 text-[#c4d5e5] sm:mb-7">
             I’m Brontis — a software developer and digital product builder
             interested in turning ambitious ideas into things people can actually use.
           </p>
 
-          <h1 className="max-w-[1200px] text-[16vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[13vw] sm:leading-[0.78] lg:text-[11vw]">
+          <h1 className="max-w-[1200px] text-[17vw] font-medium leading-[0.84] tracking-[-0.075em] sm:text-[13vw] sm:leading-[0.78] lg:text-[11vw]">
             I build
             <br />
             <span className="ml-[6vw] italic font-light text-[#c4d5e5] sm:ml-[8vw]">things</span>
@@ -175,7 +175,7 @@ export default function App() {
       </section>
 
       <section id="osbront" className="scroll-mt-28 mx-auto max-w-[1400px] px-5 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-40">
-        <div className="glass overflow-hidden rounded-[2rem] text-[#dbe8f5]">
+        <div className="glass overflow-hidden rounded-[1.5rem] text-[#dbe8f5] sm:rounded-[2rem]">
           <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(34,199,242,0.18),transparent_32%),radial-gradient(circle_at_70%_80%,rgba(11,99,246,0.2),transparent_36%)]" />
@@ -534,7 +534,7 @@ function PortraitPresence() {
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <motion.div
         style={{ x, y, rotate, scale, opacity, filter: useTransform([saturate, hue], ([sat, hueValue]) => `saturate(${sat}) hue-rotate(${hueValue}deg)` as string) }}
-        className="absolute right-[-30vw] top-[11vh] w-[108vw] max-w-none sm:right-[-10vw] sm:top-[8vh] sm:w-[68vw] sm:max-w-[1080px] lg:right-[-8vw] lg:top-[5vh] lg:w-[54vw]"
+        className="absolute right-[-34vw] top-[14vh] w-[112vw] max-w-none sm:right-[-12vw] sm:top-[8vh] sm:w-[68vw] sm:max-w-[1080px] lg:right-[-8vw] lg:top-[5vh] lg:w-[54vw]"
       >
         <div className="portrait-haze absolute -inset-16 rounded-full" />
         <img
@@ -682,7 +682,7 @@ function Project({
           </a>
         </div>
       </div>
-      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.55, delay: 0.12 }} className="mt-6 grid gap-6 border-b border-white/10 pb-8 sm:grid-cols-[1fr_0.7fr]">
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.55, delay: 0.12 }} className="mt-6 grid gap-5 border-b border-white/10 pb-8 sm:grid-cols-[1fr_0.7fr] sm:gap-6">
         <p className="max-w-xl text-base leading-7 text-[#c4d5e5]">{project.description}</p>
         <p className="text-xs uppercase tracking-[0.15em] text-[#9fb5c9] sm:text-right">{project.detail}</p>
       </motion.div>
