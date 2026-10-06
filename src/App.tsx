@@ -132,7 +132,22 @@ export default function App() {
                   <p className="mt-2 text-sm text-[#9fb5c9]">Health-tech / Product</p>
                 </div>
               </div>
-              <ArrowUpRight className="hidden sm:block transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" size={24} />
+              <div className="flex flex-col items-end gap-3">
+                <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" size={24} />
+                <span
+                  onClick={(event) => event.stopPropagation()}
+                  className="text-right text-[10px] uppercase tracking-[0.16em] text-[#9fb5c9]"
+                >
+                  <a
+                    href="https://instagram.com/osbrontgroup"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-white"
+                  >
+                    Instagram ↗
+                  </a>
+                </span>
+              </div>
             </a>
 
             <a href="#veridoux" className="group grid gap-6 py-8 sm:grid-cols-[100px_1fr_auto] sm:items-center">
@@ -146,7 +161,15 @@ export default function App() {
                   <p className="mt-2 text-sm text-[#9fb5c9]">Digital / Creative</p>
                 </div>
               </div>
-              <ArrowUpRight className="hidden sm:block transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" size={24} />
+              <div className="flex flex-col items-end gap-3">
+                <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" size={24} />
+                <span
+                  onClick={(event) => event.stopPropagation()}
+                  className="text-right text-[10px] uppercase tracking-[0.16em] text-[#9fb5c9]"
+                >
+                  <span className="cursor-default text-white/35">Instagram · Incoming</span>
+                </span>
+              </div>
             </a>
           </div>
         </div>
