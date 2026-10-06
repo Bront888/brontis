@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const projects = [
@@ -100,6 +100,83 @@ export default function App() {
             {projects.map((project, i) => (
               <Project key={project.title} project={project} index={i} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="osbront" className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
+        <div className="glass overflow-hidden rounded-[2rem]">
+          <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="relative min-h-[420px] overflow-hidden border-b border-white/10 p-8 sm:p-12 lg:border-b-0 lg:border-r">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(34,199,242,0.18),transparent_32%),radial-gradient(circle_at_70%_80%,rgba(11,99,246,0.2),transparent_36%)]" />
+              <div className="relative flex h-full flex-col justify-between">
+                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-white/40">
+                  <span>Case study · 01</span>
+                  <span>OSBRONT</span>
+                </div>
+                <div className="flex flex-1 items-center justify-center py-16">
+                  <img
+                    src="/projects/osbront-logo.webp"
+                    alt="OSBRONT"
+                    className="w-[68%] max-w-[360px] object-contain drop-shadow-[0_30px_80px_rgba(0,0,0,0.55)]"
+                  />
+                </div>
+                <p className="max-w-sm text-sm leading-6 text-white/45">
+                  A healthcare platform being engineered around one ambition:
+                  making trusted healthcare more reachable across Africa.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 sm:p-12 lg:p-16">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/38">The project</p>
+              <h2 className="mt-5 max-w-3xl text-5xl font-light leading-[0.9] tracking-[-0.055em] sm:text-7xl">
+                Building the infrastructure behind a more reachable healthcare experience.
+              </h2>
+
+              <div className="mt-14 grid gap-10 border-y border-white/10 py-8 sm:grid-cols-3">
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/30">Role</p>
+                  <p className="mt-3 text-sm leading-6 text-white/65">Product · Engineering · Design</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/30">Platform</p>
+                  <p className="mt-3 text-sm leading-6 text-white/65">Web · Mobile · Backend</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/30">Stack</p>
+                  <p className="mt-3 text-sm leading-6 text-white/65">FastAPI · Flutter · Supabase</p>
+                </div>
+              </div>
+
+              <div className="mt-12 grid gap-12 sm:grid-cols-2">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-white/30">What I built</p>
+                  <ul className="mt-5 space-y-3 text-sm leading-6 text-white/55">
+                    <li>• Authentication and role-based access control</li>
+                    <li>• Patient-owned medicine ordering workflows</li>
+                    <li>• Pharmacy and courier role foundations</li>
+                    <li>• Order lifecycle and transition protection</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-white/30">Engineering focus</p>
+                  <p className="mt-5 text-sm leading-7 text-white/50">
+                    The system is designed around explicit ownership, authorization,
+                    predictable state transitions, isolated testing, and a backend
+                    architecture that can grow beyond local development.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-12 flex flex-wrap gap-3">
+                {["FastAPI", "Python", "Flutter", "SQLAlchemy", "Alembic", "Supabase", "JWT", "pytest"].map((item) => (
+                  <span key={item} className="glass-soft rounded-full px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-white/55">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -249,9 +326,13 @@ function Project({
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/60">{project.category}</p>
             <h3 className="mt-2 text-4xl font-medium tracking-[-0.05em] sm:text-6xl">{project.title}</h3>
           </div>
-          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 transition group-hover:bg-white group-hover:text-black">
+          <a
+            href={project.title === "OSBRONT" ? "#osbront" : "#contact"}
+            aria-label={project.title === "OSBRONT" ? "Explore OSBRONT case study" : `Discuss ${project.title}`}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/25 transition hover:bg-white hover:text-black"
+          >
             <ArrowUpRight size={17} />
-          </span>
+          </a>
         </div>
       </div>
       <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.55, delay: 0.12 }} className="mt-6 grid gap-6 border-b border-white/10 pb-8 sm:grid-cols-[1fr_0.7fr]">
