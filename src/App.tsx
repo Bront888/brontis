@@ -651,7 +651,7 @@ function Project({
       transition={{ duration: 0.8, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
       className="group"
     >
-      <div className={`glass relative flex aspect-[1.55/1] items-center justify-center overflow-hidden rounded-[2rem] text-[#dbe8f5] `}>
+      <div className={`glass relative flex aspect-[1.55/1] items-center justify-center overflow-hidden rounded-[1.25rem] text-[#dbe8f5] sm:rounded-[2rem] `}>
         <motion.div
           whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -673,16 +673,16 @@ function Project({
             </div>
           )}
         </motion.div>
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent`} />
-        <div className="absolute inset-x-5 bottom-5 flex items-end justify-between text-white sm:inset-x-10 sm:bottom-10">
-          <div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-within:opacity-100" />
+        <div className="pointer-events-none absolute inset-x-5 bottom-5 flex items-end justify-between text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 sm:inset-x-10 sm:bottom-10">
+          <div className="translate-y-3 transition-transform duration-500 group-hover:translate-y-0 group-focus-within:translate-y-0">
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/60">{project.category}</p>
             <h3 className="mt-2 text-3xl font-medium tracking-[-0.05em] sm:text-6xl">{project.title}</h3>
           </div>
           <a
             href={project.title === "OSBRONT" ? "#osbront" : project.title === "VERIDOUX" ? "#veridoux" : "#contact"}
             aria-label={project.title === "OSBRONT" ? "Explore OSBRONT case study" : project.title === "VERIDOUX" ? "Explore VERIDOUX case study" : `Discuss ${project.title}`}
-            className="flex h-12 w-12 shrink-0 touch-manipulation items-center justify-center rounded-full border border-white/25 transition hover:bg-white hover:text-black sm:h-11 sm:w-11"
+            className="pointer-events-auto flex h-12 w-12 shrink-0 touch-manipulation items-center justify-center rounded-full border border-white/25 transition hover:bg-white hover:text-black sm:h-11 sm:w-11"
           >
             <ArrowUpRight size={17} />
           </a>
