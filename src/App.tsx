@@ -324,22 +324,72 @@ export default function App() {
       </section>
 
       <section className="border-y border-white/10 bg-black/10 backdrop-blur-[2px]">
-        <div className="glass-soft mx-auto max-w-[1400px] rounded-[2rem] px-6 py-24 text-[#dbe8f5] sm:px-10 lg:px-14 lg:py-32">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/58">Capabilities</p>
-          <div className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
-            {["Product development", "Frontend engineering", "Backend systems", "Mobile applications", "UI / visual design", "Technical problem solving"].map((item, i) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.05 }}
-                className="border-t border-white/10 py-5 text-xl font-light tracking-[-0.02em] sm:text-2xl"
-              >
-                <span className="mr-4 text-xs text-white/25">0{i + 1}</span>
-                {item}
-              </motion.div>
-            ))}
+        <div className="mx-auto max-w-[1400px] px-6 py-28 sm:px-10 lg:px-14 lg:py-36">
+          <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#9fb5c9]">Capabilities</p>
+              <p className="mt-5 max-w-xs text-sm leading-6 text-[#c4d5e5]">
+                A practical mix of engineering, product thinking and visual craft.
+              </p>
+            </div>
+
+            <div>
+              <div className="border-t border-white/10">
+                {[
+                  {
+                    number: "01",
+                    title: "Product development",
+                    text: "From an early idea to a working product, with the structure needed to keep growing.",
+                  },
+                  {
+                    number: "02",
+                    title: "Frontend engineering",
+                    text: "Responsive interfaces where interaction, hierarchy and performance work together.",
+                  },
+                  {
+                    number: "03",
+                    title: "Backend systems",
+                    text: "APIs, authentication, data models and business logic designed for predictable behaviour.",
+                  },
+                  {
+                    number: "04",
+                    title: "Mobile applications",
+                    text: "Cross-platform experiences that carry the product beyond the browser.",
+                  },
+                  {
+                    number: "05",
+                    title: "UI / visual design",
+                    text: "Visual systems that make products clearer, more memorable and easier to trust.",
+                  },
+                  {
+                    number: "06",
+                    title: "Technical problem solving",
+                    text: "Breaking complicated problems into smaller decisions, then building and testing the solution.",
+                  },
+                ].map((item) => (
+                  <motion.div
+                    key={item.number}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.5 }}
+                    className="grid gap-4 border-b border-white/10 py-7 sm:grid-cols-[72px_0.8fr_1.2fr] sm:items-start"
+                  >
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">{item.number}</span>
+                    <h3 className="text-2xl font-light tracking-[-0.03em] text-[#e7f1fa] sm:text-3xl">{item.title}</h3>
+                    <p className="max-w-xl text-sm leading-7 text-[#c4d5e5]">{item.text}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-3">
+                {["React", "TypeScript", "Python", "FastAPI", "Flutter", "SQLAlchemy", "Supabase", "Git"].map((item) => (
+                  <span key={item} className="glass-soft rounded-full px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-white/55">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
