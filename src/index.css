@@ -47,7 +47,7 @@ a {
   z-index: -1;
   background-image:
     linear-gradient(180deg, rgba(3, 7, 13, 0.18), rgba(3, 7, 13, 0.48)),
-    url("/projects/portfolio-clouds.png");
+    url("/portfolio-clouds.png");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
