@@ -524,7 +524,7 @@ function PortraitPresence() {
   const x = useTransform(scrollYProgress, [0, 0.5, 1], ["8vw", "2vw", "-6vw"]);
   const y = useTransform(scrollYProgress, [0, 0.5, 1], ["2vh", "-2vh", "5vh"]);
   const scale = useTransform(scrollYProgress, [0, 0.35, 0.75, 1], [0.92, 1, 0.94, 0.86]);
-  const opacity = useTransform(scrollYProgress, [0, 0.16, 0.48, 0.78, 1], [0.14, 0.25, 0.18, 0.22, 0.08]);
+  const opacity = useTransform(scrollYProgress, [0, 0.16, 0.48, 0.78, 1], [0.72, 0.9, 0.78, 0.88, 0.68]);
   const saturate = useTransform(scrollYProgress, [0, 0.35, 0.7, 1], [0.9, 1.25, 0.8, 1.4]);
   const hue = useTransform(scrollYProgress, [0, 0.5, 1], [0, 10, -12]);
 
@@ -541,9 +541,22 @@ function PortraitPresence() {
           className="relative w-full select-none object-contain drop-shadow-[0_40px_90px_rgba(0,0,0,0.5)]"
         />
         <div className="portrait-sheen absolute inset-0 rounded-[45%] mix-blend-screen" />
-        <div className="portrait-particles absolute inset-[-12%]">
+        <div className="portrait-particles absolute inset-[-12%] z-10">
           {Array.from({ length: 18 }, (_, i) => (
-            <span key={i} className="portrait-particle" style={{ "--i": i } as React.CSSProperties} />
+            <span
+              key={i}
+              className="portrait-particle"
+              style={
+                {
+                  "--left": `${8 + i * 4.7}%`,
+                  "--top": `${18 + ((i * 17) % 70)}%`,
+                  "--size": `${2 + (i % 3)}px`,
+                  "--duration": `${4.5 + (i % 5) * 0.8}s`,
+                  "--delay": `${i * -0.55}s`,
+                  "--drift": `${(i - 9) * 3}px`,
+                } as React.CSSProperties
+              }
+            />
           ))}
         </div>
       </motion.div>
