@@ -424,9 +424,12 @@ export default function App() {
               <p className="text-[10px] uppercase tracking-[0.2em] text-[#9fb5c9]">Find me online</p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">GitHub</a>
+                <a href="https://instagram.com/brontis8" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">Instagram</a>
+                <a href="https://instagram.com/osbrontgroup" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">OSBRONT</a>
+                <a href="https://tiktok.com/@brontis88_8" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">TikTok</a>
+                <a href="https://wa.me/2348104690971" target="_blank" rel="noreferrer" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">WhatsApp</a>
+                <a href="#" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">VERIDOUX · Incoming</a>
                 <a href="mailto:chinedumjideofor@gmail.com" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">Email</a>
-                <a href="#" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">LinkedIn</a>
-                <a href="#" className="glass-soft rounded-full px-4 py-3 text-[10px] uppercase tracking-[0.16em] text-[#c4d5e5] transition hover:text-white">X</a>
               </div>
             </div>
           </div>
@@ -437,7 +440,9 @@ export default function App() {
         <span>© {new Date().getFullYear()} Brontis</span>
         <div className="flex gap-5">
           <a href="https://github.com/Bront888" target="_blank" rel="noreferrer" className="transition hover:text-white">GitHub</a>
-          <a href="#" className="transition hover:text-white">LinkedIn</a>
+          <a href="https://instagram.com/brontis8" target="_blank" rel="noreferrer" className="transition hover:text-white">Instagram</a>
+          <a href="https://tiktok.com/@brontis88_8" target="_blank" rel="noreferrer" className="transition hover:text-white">TikTok</a>
+          <a href="https://wa.me/2348104690971" target="_blank" rel="noreferrer" className="transition hover:text-white">WhatsApp</a>
           <a href="mailto:chinedumjideofor@gmail.com" className="transition hover:text-white">Email</a>
         </div>
       </footer>
