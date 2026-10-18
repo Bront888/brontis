@@ -1,186 +1,170 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Manrope";
-  src: url("https://fonts.gstatic.com/s/manrope/v19/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk79FN_C-bE.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400 800;
-  font-display: swap;
+/*
+  Design system
+  One dark ground (ink) over a fixed photographic backdrop, with frosted glass
+  panels carrying the content. Paper and white appear only as solid tiles and
+  buttons. One accent blue, used sparingly. No gradients.
+*/
+@theme {
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+
+  --color-ink: #0f1b2d;
+  --color-ink-raised: #17263b;
+  --color-on-ink: #eef2f7;
+  --color-muted-ink: #b9c4d3;
+  --color-line: rgba(255, 255, 255, 0.15);
+  --color-line-strong: rgba(255, 255, 255, 0.4);
+
+  --color-paper: #f4f6f8;
+  --color-surface: #ffffff;
+
+  --color-accent: #1d4ed8;
+  --color-accent-ink: #9db8ff;
 }
 
-:root {
-  font-family: "Manrope", system-ui, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: #05080d;
-}
-
-html,
-body {
-  overflow-x: clip;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  background: #05080d;
-  color: #071a3d;
-}
-
-body,
-button,
-a {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-::selection {
-  background: rgba(34, 199, 242, 0.9);
-  color: #06111a;
-}
-
-:focus-visible {
-  outline: 2px solid #22c7f2;
-  outline-offset: 3px;
-}
-
-.portfolio-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(180deg, rgba(3, 7, 13, 0.18), rgba(3, 7, 13, 0.46)),
-    url("/portfolio-clouds.png");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  transform: scale(1.025);
-}
-
-.portfolio-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 72% 20%, rgba(34, 199, 242, 0.06), transparent 25%),
-    radial-gradient(circle at 50% 45%, transparent 40%, rgba(3, 7, 13, 0.34) 100%);
-}
-
-.glass {
-  background: linear-gradient(135deg, rgba(4, 14, 28, 0.68), rgba(5, 15, 30, 0.52));
-  border: 1px solid rgba(7, 26, 61, 0.28);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 20px 70px rgba(0, 0, 0, 0.22);
-  -webkit-backdrop-filter: blur(18px) saturate(125%);
-  backdrop-filter: blur(18px) saturate(125%);
-}
-
-.glass-soft {
-  background: rgba(4, 14, 28, 0.58);
-  border: 1px solid rgba(7, 26, 61, 0.22);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
-  backdrop-filter: blur(14px) saturate(120%);
-}
-
-@media (max-width: 640px) {
-  .portfolio-bg {
-    background-position: 50% top;
-  }
-
-  .glass {
-    -webkit-backdrop-filter: blur(12px) saturate(120%);
-    backdrop-filter: blur(12px) saturate(120%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
+/*
+  Base styles live in a layer so Tailwind utilities
+  (mt-8, text-ink, and so on) always win over these defaults.
+*/
+@layer base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+    background: var(--color-ink);
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    color: var(--color-on-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+  }
+
+  p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  dl,
+  dd,
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-ink);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-.portrait-haze {
-  background:
-    radial-gradient(circle at 48% 45%, rgba(34, 199, 242, 0.14), transparent 46%),
-    radial-gradient(circle at 70% 58%, rgba(11, 99, 246, 0.12), transparent 52%);
-  filter: blur(28px);
-}
-
-.portrait-sheen {
-  background:
-    linear-gradient(115deg, transparent 22%, rgba(255,255,255,0.08) 46%, transparent 62%),
-    radial-gradient(circle at 72% 34%, rgba(34,199,242,0.14), transparent 28%);
-  opacity: 0.75;
-}
-
-.portrait-particle {
-  position: absolute;
-  left: var(--left);
-  top: var(--top);
-  width: var(--size);
-  height: var(--size);
-  border-radius: 999px;
-  background: rgba(196, 225, 242, 0.9);
-  box-shadow:
-    0 0 8px rgba(196, 225, 242, 0.75),
-    0 0 18px rgba(34, 199, 242, 0.55);
-  opacity: 0.72;
-  animation: portrait-evaporate var(--duration) ease-in-out infinite;
-  animation-delay: var(--delay);
-}
-
-@keyframes portrait-evaporate {
-  0%, 100% {
-    opacity: 0.12;
-    transform: translate3d(0, 18px, 0) scale(0.6);
-  }
-  25% {
-    opacity: 0.95;
-  }
-  70% {
-    opacity: 0.42;
-    transform: translate3d(var(--drift), -34px, 0) scale(1.15);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .portrait-particle {
-    animation: none;
-    opacity: 0.55;
-  }
-}
-
-
-@media (max-width: 640px) {
-  .portrait-haze {
-    filter: blur(20px);
+@layer components {
+  /* Fixed photographic backdrop under a flat ink tint. */
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--color-ink);
+    background-image: url("/portfolio-clouds.png");
+    background-position: center;
+    background-size: cover;
   }
 
-  .portrait-sheen {
-    opacity: 0.58;
+  .backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(15, 27, 45, 0.5);
   }
 
-  .portrait-particle {
+  /*
+    Smoked glass: a dark tint keeps text readable over bright clouds,
+    the blur shows depth, and the hairline plus top highlight define the edge.
+  */
+  .glass {
+    background-color: rgba(12, 22, 38, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow:
-      0 0 6px rgba(196, 225, 242, 0.65),
-      0 0 12px rgba(34, 199, 242, 0.42);
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 28px 70px -24px rgba(2, 8, 20, 0.6);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(24px) saturate(150%);
+  }
+
+  @media (max-width: 640px) {
+    .glass {
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      backdrop-filter: blur(16px) saturate(140%);
+    }
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+      background-color: rgba(15, 27, 45, 0.95);
+    }
   }
 }
