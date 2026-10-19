@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { MotionConfig, motion } from "motion/react";
 import type { Variants } from "motion/react";
+import { Backdrop } from "./components/Backdrop";
 import { Button, Container, ExternalLink, Panel } from "./components/ui";
 
 const EMAIL = "chinedumjideofor@gmail.com";
@@ -147,7 +148,7 @@ const rise: Variants = {
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <div aria-hidden="true" className="backdrop" />
+      <Backdrop />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-paper focus:px-4 focus:py-2 focus:text-ink"

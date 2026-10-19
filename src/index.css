@@ -2,7 +2,7 @@
 
 /*
   Design system
-  One dark ground (ink) over a fixed photographic backdrop, with frosted glass
+  One dark ground (ink) over a fixed night-skyline backdrop, with frosted glass
   panels carrying the content. Paper and white appear only as solid tiles and
   buttons. One accent blue, used sparingly. No gradients.
 */
@@ -123,26 +123,36 @@
 }
 
 @layer components {
-  /* Fixed photographic backdrop under a flat ink tint. */
+  /* Fixed night-skyline backdrop under a light ink tint. */
   .backdrop {
     position: fixed;
     inset: 0;
     z-index: -1;
     background-color: var(--color-ink);
-    background-image: url("/portfolio-clouds.png");
+    background-image: url("/backdrop-lagos.webp");
     background-position: center;
     background-size: cover;
+  }
+
+  /* The animated canvas fades in over the identical still image. */
+  .backdrop canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
   }
 
   .backdrop::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(15, 27, 45, 0.5);
+    background-color: rgba(15, 27, 45, 0.18);
   }
 
   /*
-    Smoked glass: a dark tint keeps text readable over bright clouds,
+    Smoked glass: a dark tint keeps text readable over bright lights,
     the blur shows depth, and the hairline plus top highlight define the edge.
   */
   .glass {
