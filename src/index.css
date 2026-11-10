@@ -7,8 +7,9 @@
   buttons. One accent blue, used sparingly. No gradients.
 */
 @theme {
-  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  /* Both families are bundled with the site (see main.tsx), not loaded from Google. */
+  --font-sans: "Hanken Grotesk Variable", "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Newsreader Variable", "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 
   --color-ink: #0f1b2d;
   --color-ink-raised: #17263b;
@@ -123,7 +124,7 @@
 }
 
 @layer components {
-  /* Fixed night-skyline backdrop under a light ink tint. */
+  /* Fixed backdrop: still skyline image, with the 3D city drawn over it when WebGL is available. */
   .backdrop {
     position: fixed;
     inset: 0;
@@ -134,7 +135,7 @@
     background-size: cover;
   }
 
-  /* The animated canvas fades in over the identical still image. */
+  /* The 3D scene fades in over the still image, which remains as the fallback. */
   .backdrop canvas {
     position: absolute;
     inset: 0;

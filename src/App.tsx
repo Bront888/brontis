@@ -3,9 +3,11 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { MotionConfig, motion } from "motion/react";
 import type { Variants } from "motion/react";
 import { Backdrop } from "./components/Backdrop";
+import { Portrait3D } from "./components/Portrait3D";
 import { Button, Container, ExternalLink, Panel } from "./components/ui";
 
 const EMAIL = "chinedumjideofor@gmail.com";
+const WHATSAPP = "https://wa.me/2348104690971";
 
 const navigation = [
   { label: "Work", href: "#work" },
@@ -132,7 +134,7 @@ const elsewhere = [
   { name: "GitHub", detail: "github.com/Bront888", href: "https://github.com/Bront888" },
   { name: "Instagram", detail: "@brontis8", href: "https://instagram.com/brontis8" },
   { name: "TikTok", detail: "@brontis88_8", href: "https://tiktok.com/@brontis88_8" },
-  { name: "WhatsApp", detail: "Send a message", href: "https://wa.me/2348104690971" },
+  { name: "WhatsApp", detail: "Send a message", href: WHATSAPP },
 ];
 
 const stagger: Variants = {
@@ -258,13 +260,7 @@ function Hero() {
           transition={{ duration: 0.9, delay: 0.25 }}
           className="m-0 w-full max-w-[408px] self-end border border-b-0 border-line bg-black/25 lg:col-span-5 lg:justify-self-end"
         >
-          <img
-            src="/projects/brontis-portrait.webp"
-            alt="Portrait of Brontis in a dark suit and glasses"
-            width={408}
-            height={612}
-            className="mx-auto aspect-[408/500] w-full object-cover object-top"
-          />
+          <Portrait3D />
           <figcaption className="border-t border-line px-5 py-4">
             <p className="font-serif text-xl">Brontis</p>
             <p className="text-sm text-muted-ink">Software developer and product builder</p>
@@ -464,9 +460,16 @@ function Contact() {
         <div className="lg:col-span-7">
           <h2 className="max-w-[18ch] text-4xl leading-[1.08] sm:text-6xl">Have something to build? Let’s talk.</h2>
           <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-muted-ink">
-            Tell me about the product idea, technical challenge or creative project. I read every message and reply
-            personally.
+            Tell me about the product idea, technical challenge or creative project.
           </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href={WHATSAPP} target="_blank" rel="noreferrer noopener" variant="light">
+              Message me on WhatsApp
+            </Button>
+            <Button href={`mailto:${EMAIL}`} variant="outline">
+              Send an email
+            </Button>
+          </div>
           <p className="mt-10">
             <a
               href={`mailto:${EMAIL}`}
