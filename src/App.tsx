@@ -3,6 +3,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { MotionConfig, motion } from "motion/react";
 import type { Variants } from "motion/react";
 import { Backdrop } from "./components/Backdrop";
+import { TiltPortrait } from "./components/TiltPortrait";
 import { Button, Container, ExternalLink, Panel } from "./components/ui";
 
 const EMAIL = "chinedumjideofor@gmail.com";
@@ -285,14 +286,7 @@ function Hero() {
           transition={{ duration: 0.9, delay: 0.25 }}
           className="m-0 w-full max-w-[408px] self-end border border-b-0 border-line bg-black/25 lg:col-span-5 lg:justify-self-end"
         >
-          <img
-            src="/projects/brontis-portrait.webp"
-            alt="Portrait of Brontis in a dark suit and glasses"
-            width={408}
-            height={612}
-            decoding="async"
-            className="aspect-[408/500] w-full object-cover object-top"
-          />
+          <TiltPortrait />
           <figcaption className="border-t border-line px-5 py-4">
             <p className="font-serif text-xl">Brontis</p>
             <p className="text-sm text-muted-ink">Software developer and product builder</p>
