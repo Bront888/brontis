@@ -25,6 +25,7 @@ type CaseStudy = {
   logo?: string;
   logoAlt?: string;
   fill?: boolean;
+  site?: string;
   facts: { label: string; value: string }[];
   builtHeading: string;
   built: string[];
@@ -97,6 +98,7 @@ const caseStudies: CaseStudy[] = [
     logo: "/projects/bworld-logo.webp",
     logoAlt: "Bworld Interiors logo: a serif letter B wrapped in a gold globe grid and orbit",
     fill: true,
+    site: "https://bworld-interiors.chinedumjideofor.workers.dev/",
     facts: [
       { label: "Role", value: "Design and engineering" },
       { label: "Platform", value: "Web storefront" },
@@ -353,12 +355,20 @@ function Work() {
 
 function CaseStudyRow({ study }: { study: CaseStudy }) {
   const tile = study.tile === "ink" ? "border border-line bg-ink" : "bg-surface";
+  const tileClass = `flex aspect-[5/4] items-center justify-center rounded-xl ${tile}`;
 
   return (
     <article id={study.id} className="scroll-mt-28 border-t border-line py-12 first:border-t-0 first:pt-0 lg:py-16 lg:first:pt-0">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
         <div className="lg:col-span-5">
-          <div className={`flex aspect-[5/4] items-center justify-center rounded-xl ${tile}`}>
+          {study.site ? (
+            <a
+              href={study.site}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${study.name}`}
+              className={`${tileClass} transition-transform duration-300 hover:-translate-y-1 focus-visible:-translate-y-1`}
+            >
             {study.logo && (
               <img
                 src={study.logo}
@@ -369,7 +379,21 @@ function CaseStudyRow({ study }: { study: CaseStudy }) {
                 className={study.fill ? "h-full w-full rounded-xl object-cover" : "h-[76%] w-auto object-contain"}
               />
             )}
-          </div>
+            </a>
+          ) : (
+            <div className={tileClass}>
+            {study.logo && (
+              <img
+                src={study.logo}
+                alt={study.logoAlt ?? ""}
+                width={study.fill ? 1200 : 900}
+                height={study.fill ? 960 : 900}
+                decoding="async"
+                className={study.fill ? "h-full w-full rounded-xl object-cover" : "h-[76%] w-auto object-contain"}
+              />
+            )}
+            </div>
+          )}
         </div>
 
         <div className="lg:col-span-7">
