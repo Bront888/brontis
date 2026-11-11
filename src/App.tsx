@@ -22,8 +22,9 @@ type CaseStudy = {
   kind: string;
   summary: string;
   tile: "ink" | "paper";
-  logo: string;
-  logoAlt: string;
+  logo?: string;
+  logoAlt?: string;
+  wordmark?: string;
   facts: { label: string; value: string }[];
   builtHeading: string;
   built: string[];
@@ -85,6 +86,31 @@ const caseStudies: CaseStudy[] = [
     focus:
       "A restrained, premium aesthetic balanced with the clarity a consulting brand needs: strong hierarchy, deliberate spacing, confident typography, and communication that feels credible rather than decorative.",
     note: "Instagram coming soon",
+  },
+  {
+    id: "bworld-interiors",
+    name: "Bworld Interiors",
+    kind: "E-commerce store",
+    summary:
+      "An online store for home furnishings and décor, built so customers can browse the range and order either online or directly on WhatsApp.",
+    tile: "paper",
+    wordmark: "Bworld Interiors",
+    facts: [
+      { label: "Role", value: "Design and engineering" },
+      { label: "Platform", value: "Web storefront" },
+      { label: "Stack", value: "Next.js, Paystack, WhatsApp ordering, Cloudflare" },
+    ],
+    builtHeading: "What I built",
+    built: [
+      "Product catalogue for bedding, curtains, towels, robes and décor",
+      "Online checkout with Paystack payments",
+      "WhatsApp ordering as a second way to buy",
+      "A glass-style storefront design, tuned for phones",
+    ],
+    focusHeading: "Engineering focus",
+    focus:
+      "A storefront that feels premium yet stays simple for Nigerian shoppers: familiar payment options, an order path through WhatsApp for people who prefer to talk first, and a catalogue the owner can keep up to date.",
+    link: { label: "Visit the store", href: "https://bworld-interiors.chinedumjideofor.workers.dev/" },
   },
 ];
 
@@ -292,7 +318,7 @@ function Work() {
       <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
         <h2 className="text-4xl leading-[1.1] sm:text-5xl lg:col-span-5">Selected work</h2>
         <p className="max-w-[52ch] text-lg text-muted-ink lg:col-span-6 lg:col-start-7">
-          Two ventures I’m building and shaping, plus the code I share along the way.
+          Ventures and products I’m building and shaping, plus the code I share along the way.
         </p>
       </div>
 
@@ -331,14 +357,20 @@ function CaseStudyRow({ study }: { study: CaseStudy }) {
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
         <div className="lg:col-span-5">
           <div className={`flex aspect-[5/4] items-center justify-center rounded-xl ${tile}`}>
-            <img
-              src={study.logo}
-              alt={study.logoAlt}
-              width={900}
-              height={900}
-              decoding="async"
-              className="h-[76%] w-auto object-contain"
-            />
+            {study.logo ? (
+              <img
+                src={study.logo}
+                alt={study.logoAlt ?? ""}
+                width={900}
+                height={900}
+                decoding="async"
+                className="h-[76%] w-auto object-contain"
+              />
+            ) : (
+              <span className={`px-6 text-center font-serif text-4xl leading-tight sm:text-5xl ${study.tile === "ink" ? "text-on-ink" : "text-ink"}`}>
+                {study.wordmark ?? study.name}
+              </span>
+            )}
           </div>
         </div>
 
