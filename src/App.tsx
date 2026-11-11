@@ -24,7 +24,7 @@ type CaseStudy = {
   tile: "ink" | "paper";
   logo?: string;
   logoAlt?: string;
-  wordmark?: string;
+  fill?: boolean;
   facts: { label: string; value: string }[];
   builtHeading: string;
   built: string[];
@@ -94,7 +94,9 @@ const caseStudies: CaseStudy[] = [
     summary:
       "An online store for home furnishings and décor, built so customers can browse the range and order either online or directly on WhatsApp.",
     tile: "paper",
-    wordmark: "Bworld Interiors",
+    logo: "/projects/bworld-logo.webp",
+    logoAlt: "Bworld Interiors logo: a serif letter B wrapped in a gold globe grid and orbit",
+    fill: true,
     facts: [
       { label: "Role", value: "Design and engineering" },
       { label: "Platform", value: "Web storefront" },
@@ -357,19 +359,15 @@ function CaseStudyRow({ study }: { study: CaseStudy }) {
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
         <div className="lg:col-span-5">
           <div className={`flex aspect-[5/4] items-center justify-center rounded-xl ${tile}`}>
-            {study.logo ? (
+            {study.logo && (
               <img
                 src={study.logo}
                 alt={study.logoAlt ?? ""}
-                width={900}
-                height={900}
+                width={study.fill ? 1200 : 900}
+                height={study.fill ? 960 : 900}
                 decoding="async"
-                className="h-[76%] w-auto object-contain"
+                className={study.fill ? "h-full w-full rounded-xl object-cover" : "h-[76%] w-auto object-contain"}
               />
-            ) : (
-              <span className={`px-6 text-center font-serif text-4xl leading-tight sm:text-5xl ${study.tile === "ink" ? "text-on-ink" : "text-ink"}`}>
-                {study.wordmark ?? study.name}
-              </span>
             )}
           </div>
         </div>
